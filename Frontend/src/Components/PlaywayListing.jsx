@@ -35,7 +35,7 @@ const displayPlayway = () =>{
     <div>
         <header className='bg-body-tertiary'>
             <div className='container py-5'>
-                <p className='text-centre fw-bold'>All Products</p>
+                <p className='text-centre fw-bold'>All Playways</p>
                 <input type='text' placeholder='Search Playways' className='form-control w-75 m-auto'/>
             </div>
         </header>

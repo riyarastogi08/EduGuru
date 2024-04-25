@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react'
 
 const PlaywayListing = () => {
-    const [products, setProducts] = useState([])
+    const [playway, setPlayways] = useState([])
 
     const fetchPlayway = async () => {
         const res = await fetch('http://localhost:3000/product/getall')
@@ -9,7 +9,7 @@ const PlaywayListing = () => {
         if (res.status === 500){
         const data = await res.json();
         console.log(data)
-        setProducts(data)
+        setPlayways(data)
     }
 }
 useEffect (() => {
@@ -21,7 +21,8 @@ const displayPlayway = () =>{
         <div className="container">
             <div className='com-md-4'>
                 <div className='card p-3 mb-5 bg-dark'>
-                    <h3 className='mt-3 text-light'>{item.pname}</h3>
+                    <h3 className='mt-3 text-light'>{item.name}</h3>
+                    <h3 className='mt-3 text-light'>{item.category}</h3>
                     <p className='mt-3 text-light'>{item.address}</p>
                     <p className='mt-3 text-light'>{item.description}</p>
                     

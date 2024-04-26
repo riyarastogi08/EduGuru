@@ -4,10 +4,10 @@ import * as Yup from 'yup'
 import { enqueueSnackbar } from 'notistack'
 
 const LoginSchema =Yup.object().shape({
-  name: Yup.string()
-  .required('Name is required')
-  .min(3, 'Name must be at least 3 characters')
-  .max(15, 'Name must be at most 15 characters'),
+ 
+  email: Yup.string()
+  .required('Email is required')
+  .email ('Email is in valid'),
   password: Yup.string()
   .required('Password is required')
   .min(8, 'Password must be at least 8 characters')
@@ -17,7 +17,37 @@ const LoginSchema =Yup.object().shape({
 
 
 const Login = () => {
-  return (
+   // step 1: formik initialisation
+   const LoginForm = useFormik({
+    initialValues: {
+      email: '',
+      password:''
+    },
+    // step 5: validation schema
+    onSubmit: async(values, action) => {
+      console.log(values);
+      const res = await fetch('http://localhost:5000/user/add',{
+        method: 'POST',
+        body: JSON.stringify(values),
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      });
+      console.log(res.status)
+      action.resetForm()
+
+      if(res.status === 200){
+        enqueueSnackbar('Login Successfully', {variant: 'success'})
+
+      } else {
+        enqueueSnackbar('Login Failed', {variant: 'error'})
+      }
+     
+    },
+    validationSchema: LoginSchema,
+   }) 
+   return (
+ 
     <div>
       <section className="vh-100" style={{ backgroundColor: "#9A616D" }}>
         <div className="container py-5 h-100">
@@ -27,7 +57,7 @@ const Login = () => {
                 <div className="row g-0">
                   <div className="col-md-6 col-lg-5 d-none d-md-block">
                     <img
-                      src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/img1.webp"
+                      src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR7kzxCDADsV6Dzz6yEYRMZdZ2cGU72UMI26g&s"
                       alt="login form"
                       className="img-fluid"
                       style={{ borderRadius: "1rem 0 0 1rem" }}
@@ -35,36 +65,46 @@ const Login = () => {
                   </div>
                   <div className="col-md-6 col-lg-7 d-flex align-items-center">
                     <div className="card-body p-4 p-lg-5 text-black">
-                      <form>
+                      <form onSubmit={LoginForm.handleSubmit}>
                         <div className="d-flex align-items-center mb-3 pb-1">
                           <i
                             className="fas fa-cubes fa-2x me-3"
                             style={{ color: "#ff6219" }}
                           />
-                          <span className="h1 fw-bold mb-0">Logo</span>
+                          
                         </div>
-                        <h5
+                        <h2
                           className="fw-normal mb-3 pb-3"
                           style={{ letterSpacing: 1 }}
                         >
-                          Sign into your account
-                        </h5>
-                        <div data-mdb-input-init="" className="form-outline mb-4">
+                          Login into your account
+                        </h2>
+                        < div data-mdb-input-init="" className="form-outline mb-4">
+                        <span style={{color:'red', fontSize:10}}>{LoginForm.touched.email && LoginForm.errors.email} </span>
+                        
                           <input
                             type="email"
-                            id="form2Example17"
                             className="form-control form-control-lg"
+                            values={LoginForm.values.email}
+                            onChange={LoginForm.handleChange}
+                            required=''
                           />
+                          
                           <label className="form-label" htmlFor="form2Example17">
                             Email address
                           </label>
+                         
                         </div>
                         <div data-mdb-input-init="" className="form-outline mb-4">
+                        <span style={{color:'red', fontSize:10}}>{LoginForm.touched.password && LoginForm.errors.password} </span>
                           <input
                             type="password"
-                            id="form2Example27"
                             className="form-control form-control-lg"
+                            values={LoginForm.values.password}
+                            onChange={LoginForm.handleChange}
+                            required=''
                           />
+                          
                           <label className="form-label" htmlFor="form2Example27">
                             Password
                           </label>
@@ -74,7 +114,7 @@ const Login = () => {
                             data-mdb-button-init=""
                             data-mdb-ripple-init=""
                             className="btn btn-dark btn-lg btn-block"
-                            type="button"
+                            type="sumbit"
                           >
                             Login
                           </button>

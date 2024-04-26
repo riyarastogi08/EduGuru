@@ -10,6 +10,9 @@ import AddSchool from './Components/AddSchool'
 import AddCollege from './Components/AddCollege'
 import PlaywayListing from './Components/PlaywayListing'
 import { SnackbarProvider } from 'notistack'
+import ViewPlayway from './Components/ViewPlayway'
+import SchoolListing from './Components/SchoolListing'
+import CollegeListing from './Components/CollegeListing'
 
 const App = () => {
   return (
@@ -28,6 +31,9 @@ const App = () => {
         <Route path='/AddSchool' element= {<AddSchool/>}/>
         <Route path='/AddCollege' element= {<AddCollege/>}/>
         <Route path='/PlayListing' element= {<PlaywayListing/>}/>
+        <Route path='/SchoolListing' element= {<SchoolListing/>}/>
+        <Route path='/CollegeListing' element= {<CollegeListing/>}/>
+        <Route path='/ViewPlayway' element= {<ViewPlayway/>}/>
         </Routes>
         </SnackbarProvider>
         </BrowserRouter>

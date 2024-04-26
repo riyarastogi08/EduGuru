@@ -1,23 +1,23 @@
 import React, {useState, useEffect} from 'react'
 
-const PlaywayListing = () => {
-    const [playway, setPlayways] = useState([])
+const SchoolListing = () => {
+    const [school, setSchools] = useState([])
 
-    const fetchPlayway = async () => {
-        const res = await fetch('http://localhost:5000/playway/getall')
+    const fetchSchool = async () => {
+        const res = await fetch('http://localhost:5000/school/getall')
         console.log(res.status)
         if (res.status === 500){
         const data = await res.json();
         console.log(data)
-        setPlayways(data)
+        setSchools(data)
     }
 }
 useEffect (() => {
-    fetchPlayway()
+    fetchSchool()
 }, []);
 
-const displayPlayway = () =>{
-    return playway.map((item) => (
+const displaySchool = () =>{
+    return school.map((item) => (
         <div className="container">
             <div className='col-md-4'>
                 <div className='card p-3 mb-5 bg-dark'>
@@ -36,18 +36,18 @@ const displayPlayway = () =>{
     <div>
         <header className='bg-body-tertiary'>
             <div className='container py-5'>
-                <p className='text-centre fw-bold'>All Playways</p>
-                <input type='text' placeholder='Search Playways' className='form-control w-75 m-auto'/>
+                <p className='text-centre fw-bold'>All Schools</p>
+                <input type='text' placeholder='Search Schools' className='form-control w-75 m-auto'/>
             </div>
         </header>
 
         <div className='container mt-5'>
             <div className='row mt-5 p-5'>
-                {displayPlayway()}
+                {displaySchool()}
             </div>
         </div>
     </div>
   )
 }
 
-export default PlaywayListing
+export default SchoolListing

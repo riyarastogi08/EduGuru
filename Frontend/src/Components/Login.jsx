@@ -2,6 +2,7 @@ import React from 'react'
 import {useFormik} from 'formik'
 import * as Yup from 'yup'
 import { enqueueSnackbar } from 'notistack'
+import image from '../assets/images.jpg'
 
 const LoginSchema =Yup.object().shape({
  
@@ -57,7 +58,7 @@ const Login = () => {
                 <div className="row g-0">
                   <div className="col-md-6 col-lg-5 d-none d-md-block">
                     <img
-                      src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR7kzxCDADsV6Dzz6yEYRMZdZ2cGU72UMI26g&s"
+                      src={image}
                       alt="login form"
                       className="img-fluid"
                       style={{ borderRadius: "1rem 0 0 1rem" }}
@@ -84,6 +85,7 @@ const Login = () => {
                         
                           <input
                             type="email"
+                            id="email"
                             className="form-control form-control-lg"
                             values={LoginForm.values.email}
                             onChange={LoginForm.handleChange}
@@ -100,6 +102,7 @@ const Login = () => {
                           <input
                             type="password"
                             className="form-control form-control-lg"
+                            id="password"
                             values={LoginForm.values.password}
                             onChange={LoginForm.handleChange}
                             required=''

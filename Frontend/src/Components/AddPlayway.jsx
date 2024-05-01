@@ -16,9 +16,10 @@ const AddPlayway = () => {
   const productForm = useFormik({
     initialValues: {
       name: '',
-      category: '',
+      email: '',
       address: '',
-      description: ''
+      phNo:'',
+      fees:''
     },
 
     /*onSubmit: (values, {resetForm}) =>{
@@ -57,9 +58,9 @@ const AddPlayway = () => {
                     </div>
                     <div className="card-body">
                       {/* step2: handling when submit */ }
-                        <form onSubmit={productForm.handleSubmit}>
+                      <form onSubmit={productForm.handleSubmit}>
                         <div className="form-group">
-                            <label>Name</label>
+                            <label>Playway Name</label>
                             <span style={{color: 'red', fontSize: '10'}}>{productForm.touched.name && productForm.errors.name}</span>
                             <input type="text" className="form-control mb-4" 
                             id="name"
@@ -68,12 +69,12 @@ const AddPlayway = () => {
                             
                         </div>
                         <div className="form-group">
-                            <label>Category</label>
-                            <span style={{color: 'red', fontSize: '10'}}>{productForm.touched.category && productForm.errors.category}</span>
+                            <label>Email</label>
+                            <span style={{color: 'red', fontSize: '10'}}>{productForm.touched.email && productForm.errors.email}</span>
                             <input type="text" className="form-control mb-4"
-                            id="category"
+                            id="email"
                             onChange={productForm.handleChange}
-                            value={productForm.values.category} />
+                            value={productForm.values.email} />
                         </div>
                         <div className="form-group">
                             <label>Address</label>
@@ -83,16 +84,25 @@ const AddPlayway = () => {
                             onChange={productForm.handleChange}
                             value={productForm.values.address} />
                         </div>
+                        
                         <div className="form-group">
-                            <label>Description</label>
-                            <span style={{color: 'red', fontSize: '10'}}>{productForm.touched.description && productForm.errors.description}</span>
+                            <label>Phone No.</label>
+                            <span style={{color: 'red', fontSize: '10'}}>{productForm.touched.phNo && productForm.errors.phNo}</span>
                             <input type="text" className="form-control mb-4"
-                            id="description"
+                            id="phNo"
                             onChange={productForm.handleChange}
-                            value={productForm.values.description} />
+                            value={productForm.values.phNo} />
+                        </div>
+                        <div className="form-group">
+                            <label>Fees</label>
+                            <span style={{color: 'red', fontSize: '10'}}>{productForm.touched.fees && productForm.errors.fees}</span>
+                            <input type="text" className="form-control mb-4"
+                            id="fees"
+                            onChange={productForm.handleChange}
+                            value={productForm.values.fees} />
                         </div>
                         <button type='submit' className="btn btn-primary">Submit Playway</button>
-                    </form>
+                    </form> 
                 </div>
             </div>
         </div>

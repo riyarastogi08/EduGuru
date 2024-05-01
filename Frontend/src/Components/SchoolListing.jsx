@@ -21,10 +21,12 @@ const displaySchool = () =>{
         <div className="container">
             <div className='col-md-4'>
                 <div className='card p-3 mb-5 bg-dark'>
-                    <h3 className='mt-3 text-light'>{item.name}</h3>
-                    <h3 className='mt-3 text-light'>{item.category}</h3>
+                    <h3 className='mt-3 text-light'>{item.schoolName}</h3>
+                    <h3 className='mt-3 text-light'>{item.email}</h3>
                     <p className='mt-3 text-light'>{item.address}</p>
-                    <p className='mt-3 text-light'>{item.description}</p>
+                   
+                    <h5 className='mt-3 text-light'>{item.phNo}</h5>
+                    <h5 className='mt-3 text-light'>{item.fees}</h5>
                     
                 </div>
 

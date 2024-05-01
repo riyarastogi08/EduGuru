@@ -13,6 +13,7 @@ import { SnackbarProvider } from 'notistack'
 import ViewPlayway from './Components/ViewPlayway'
 import SchoolListing from './Components/SchoolListing'
 import CollegeListing from './Components/CollegeListing'
+import Footer from './Components/Footer'
 
 const App = () => {
   return (
@@ -34,7 +35,9 @@ const App = () => {
         <Route path='/SchoolListing' element= {<SchoolListing/>}/>
         <Route path='/CollegeListing' element= {<CollegeListing/>}/>
         <Route path='/ViewPlayway' element= {<ViewPlayway/>}/>
+        
         </Routes>
+        <Footer/>
         </SnackbarProvider>
         </BrowserRouter>
     </div>

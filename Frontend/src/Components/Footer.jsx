@@ -47,7 +47,7 @@ const Footer = () => {
                                     {/* Content */}
                                     <h6 className="text-uppercase fw-bold mb-4">
                                         <i className="fas fa-gem me-3" />
-                                        Company name
+                                        Top-5-EduGuru
                                     </h6>
                                     <p>
                                         Here you can use rows and columns to organize your footer content.

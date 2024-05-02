@@ -2,7 +2,7 @@ import React from 'react'
 import {useFormik} from 'formik'
 import * as Yup from 'yup'
 import { enqueueSnackbar } from 'notistack'
-import image from '../assets/images.jpg'
+import image from '../assets/image.jpg'
 
 const LoginSchema =Yup.object().shape({
  
@@ -61,7 +61,7 @@ const Login = () => {
                       src={image}
                       alt="login form"
                       className="img-fluid"
-                      style={{ borderRadius: "1rem 0 0 1rem" }}
+                      style={{ borderRadius: "1rem 0 0 1rem", height:"95%", width:"95 %"}}
                     />
                   </div>
                   <div className="col-md-6 col-lg-7 d-flex align-items-center">

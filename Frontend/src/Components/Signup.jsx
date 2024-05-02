@@ -3,6 +3,7 @@ import { useFormik } from 'formik'
 import * as Yup from 'yup'
 import { enqueueSnackbar } from 'notistack'
 import { useNavigate } from 'react-router-dom'
+import image from '../assets/image1.jpg'
 
 const SignupSchema = Yup.object().shape({
   name: Yup.string()
@@ -155,9 +156,10 @@ const Signup = () => {
                     </div>
                     <div className="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">
                       <img
-                        src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/draw1.webp"
+                        src={image}
                         className="img-fluid"
                         alt="Sample image"
+                        style={{  height:"95%", width:"95 %"}}
                       />
                     </div>
                   </div>

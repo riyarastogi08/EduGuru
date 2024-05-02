@@ -77,6 +77,7 @@ const Navbar = () => {
           >
             <i className="fas fa-bell" />
             <span className="badge rounded-pill badge-notification bg-danger">
+           
               1
             </span>
           </a>
@@ -85,20 +86,16 @@ const Navbar = () => {
             aria-labelledby="navbarDropdownMenuLink"
           >
             <li>
-              <a className="dropdown-item" href="#">
-                Some news
+              <a className="dropdown-item" href="/Login">
+                Login
               </a>
             </li>
             <li>
-              <a className="dropdown-item" href="#">
-                Another news
+              <a className="dropdown-item" href="/Signup">
+                Signup
               </a>
             </li>
-            <li>
-              <a className="dropdown-item" href="#">
-                Something else here
-              </a>
-            </li>
+
           </ul>
         </div>
         {/* Avatar */}
@@ -133,11 +130,7 @@ const Navbar = () => {
                 Settings
               </a>
             </li>
-            <li>
-              <a className="dropdown-item" href="#">
-                Logout
-              </a>
-            </li>
+            
           </ul>
         </div>
       </div>

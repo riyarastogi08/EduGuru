@@ -18,6 +18,7 @@ import ManagePlayway from './Components/ManagePlayway'
 import ManageSchool from './Components/ManageSchool'
 import ManageCollege from './Components/ManageCollege'
 import ManageUser from './Components/ManageUser'
+import Contact from './Components/Contact'
 
 const App = () => {
   return (
@@ -43,6 +44,7 @@ const App = () => {
         <Route path='/ManageSchool' element= {<ManageSchool/>}/>
         <Route path='/ManageCollege' element= {<ManageCollege/>}/>
         <Route path='/ManageUser' element= {<ManageUser/>}/>
+        <Route path='/Contact' element= {<Contact/>}/>
         </Routes>
         <Footer/>
         </SnackbarProvider>

@@ -12,12 +12,12 @@ const CollegeListing = () => {
         setColleges(data)
     }
 }
-useEffect (() => {
+useEffect (() => {  
     fetchCollege()
 }, []);
 
 const displayCollege = () =>{
-    return College.map((item) => (
+    return college.map((item) => (
         <div className="container">
             <div className='col-md-4'>
                 <div className='card p-3 mb-5 bg-dark'>

@@ -14,6 +14,10 @@ import ViewPlayway from './Components/ViewPlayway'
 import SchoolListing from './Components/SchoolListing'
 import CollegeListing from './Components/CollegeListing'
 import Footer from './Components/Footer'
+import ManagePlayway from './Components/ManagePlayway'
+import ManageSchool from './Components/ManageSchool'
+import ManageCollege from './Components/ManageCollege'
+import ManageUser from './Components/ManageUser'
 
 const App = () => {
   return (
@@ -31,11 +35,14 @@ const App = () => {
         <Route path='/AddPlayway' element= {<AddPlayway/>}/>
         <Route path='/AddSchool' element= {<AddSchool/>}/>
         <Route path='/AddCollege' element= {<AddCollege/>}/>
-        <Route path='/PlayListing' element= {<PlaywayListing/>}/>
+        <Route path='/PlaywayListing' element= {<PlaywayListing/>}/>
         <Route path='/SchoolListing' element= {<SchoolListing/>}/>
         <Route path='/CollegeListing' element= {<CollegeListing/>}/>
         <Route path='/ViewPlayway' element= {<ViewPlayway/>}/>
-        
+        <Route path='/ManagePlayway' element= {<ManagePlayway/>}/>
+        <Route path='/ManageSchool' element= {<ManageSchool/>}/>
+        <Route path='/ManageCollege' element= {<ManageCollege/>}/>
+        <Route path='/ManageUser' element= {<ManageUser/>}/>
         </Routes>
         <Footer/>
         </SnackbarProvider>

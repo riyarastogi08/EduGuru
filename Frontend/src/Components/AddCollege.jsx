@@ -50,7 +50,7 @@ const AddCollege = () => {
     },
     validationSchema: AddCollegeSchema
   })
-    return (
+    return (  
         <div className='container'>
             <div className="col">
                 <div className="card w-25 d-block mx-auto">

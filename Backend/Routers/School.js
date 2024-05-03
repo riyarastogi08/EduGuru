@@ -16,7 +16,7 @@ router.post('/add', (req, res) => {
 
 
 
-router.post('/getall', (req, res) => {
+router.get('/getall', (req, res) => {
     Model.find ({})
     .then((result) => {
         res.json(result);

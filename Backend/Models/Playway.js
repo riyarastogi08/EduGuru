@@ -1,10 +1,10 @@
 const {Schema, model} = require('../connection')
 const playwaySchema = new Schema({
-    playwayName: String,
+    name: String,
     email: String,
-    phNo: Number,
-    fees: Number,
-    address: String
+    phone: Number,
+    fees: Number
+   
 
 });
 module.exports = model('playway', playwaySchema)

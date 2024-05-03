@@ -1,5 +1,4 @@
 import React from 'react'
-// import logo from '../assets/head.jpg'
 
 const Home = () => {
   return (

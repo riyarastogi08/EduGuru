@@ -19,6 +19,7 @@ import ManageSchool from './Components/ManageSchool'
 import ManageCollege from './Components/ManageCollege'
 import ManageUser from './Components/ManageUser'
 import Contact from './Components/Contact'
+import ForgetPassword from './Components/ForgetPassword'
 
 const App = () => {
   return (
@@ -45,6 +46,7 @@ const App = () => {
         <Route path='/ManageCollege' element= {<ManageCollege/>}/>
         <Route path='/ManageUser' element= {<ManageUser/>}/>
         <Route path='/Contact' element= {<Contact/>}/>
+        <Route path='/ForgetPassword' element= {<ForgetPassword/>}/>
         </Routes>
         <Footer/>
         </SnackbarProvider>

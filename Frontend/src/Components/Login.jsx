@@ -4,6 +4,7 @@ import * as Yup from 'yup'
 import { enqueueSnackbar } from 'notistack'
 import image from '../assets/image.jpg'
 
+
 const LoginSchema =Yup.object().shape({
  
   email: Yup.string()
@@ -122,13 +123,13 @@ const Login = () => {
                             Login
                           </button>
                         </div>
-                        <a className="small text-muted" href="#!">
-                          Forgot password?
-                        </a>
+                        {/* <Link to="/ForgetPassword" classname="text-body">
+                          Forget Password
+                        </Link> */}
                         <p className="mb-5 pb-lg-2" style={{ color: "#393f81" }}>
                           Don't have an account?{" "}
-                          <a href="#!" style={{ color: "#393f81" }}>
-                            Register here
+                          <a href="/ForgetPassword" style={{ color: "#393f81" }}>
+                            Forget Password
                           </a>
                         </p>
                         <a href="#!" className="small text-muted">

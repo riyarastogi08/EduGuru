@@ -48,7 +48,7 @@ const Contact = () => {
                                     <div className="col-xl-6">
                                         <div className="card-body p-md-5 text-black">
                                             <h3 className="mb-5 text-uppercase">
-                                                Contact-Us
+                                                Feedback
                                             </h3>
                                             <div className="row">
                                                 <div className="col-md-6 mb-4">

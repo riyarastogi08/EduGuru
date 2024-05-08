@@ -58,13 +58,13 @@ const AddPlayway = () => {
   return (
     <>
     
-    <div className="max-w-md mx-auto mt-10 bg-white shadow-lg rounded-lg overflow-hidden">
-  <div className="text-2xl py-4 px-6 bg-gray-900 text-white text-center font-bold uppercase">
+    <div className="max-w-md mx-auto mt-10 bg-white text-blue-900 shadow-lg rounded-lg overflow-hidden">
+  <div className="text-2xl py-4 px-6 bg-white text-blue-900 text-center font-bold uppercase">
     Add playways
   </div>
   <form className="py-4 px-6" onSubmit={addPlaywayForm.handleSubmit} method="POST">
     <div className="mb-4">
-      <label className="block text-gray-700 font-bold mb-2" htmlFor="playwayname">
+      <label className="block text-blue-900 font-bold mb-2" htmlFor="playwayname">
         Playway Name
       </label>
       <input
@@ -77,7 +77,7 @@ const AddPlayway = () => {
       />
     </div>
     <div className="mb-4">
-      <label className="block text-gray-700 font-bold mb-2" htmlFor="playwaydetail">
+      <label className="block text-blue-900 font-bold mb-2" htmlFor="playwaydetail">
         Playway Detail
       </label>
       <input
@@ -90,7 +90,7 @@ const AddPlayway = () => {
       />
     </div>
     <div className="mb-4">
-      <label className="block text-gray-700 font-bold mb-2" htmlFor="playwayaddress">
+      <label className="block text-blue-900 font-bold mb-2" htmlFor="playwayaddress">
         Playway Address
       </label>
       <input
@@ -103,7 +103,7 @@ const AddPlayway = () => {
       />
     </div>
     <div className="mb-4">
-      <label className="block text-gray-700 font-bold mb-2" htmlFor="phone">
+      <label className="block text-blue-900 font-bold mb-2" htmlFor="phone">
         Phone Number
       </label>
       <input
@@ -116,7 +116,7 @@ const AddPlayway = () => {
       />
   </div>
     <div className="mb-4">
-      <label className="block text-gray-700 font-bold mb-2" htmlFor="email">
+      <label className="block text-blue-900 font-bold mb-2" htmlFor="email">
         Email
       </label>
       <input
@@ -132,7 +132,7 @@ const AddPlayway = () => {
 
 
     <div className="mb-4">
-      <label className="block text-gray-700 font-bold mb-2" htmlFor="fees">
+      <label className="block text-blue-900 font-bold mb-2" htmlFor="fees">
         Fees
       </label>
     <textarea
@@ -146,7 +146,7 @@ const AddPlayway = () => {
       />
     </div>
     <div className="mb-4">
-      <label className="block text-gray-700 font-bold mb-2" htmlFor="image">
+      <label className="block text-blue-900 font-bold mb-2" htmlFor="image">
         Image
       </label>
       <input
@@ -160,7 +160,7 @@ const AddPlayway = () => {
   </div>
     <div className="flex items-center justify-center mb-4">
       <button
-        className="bg-gray-900 text-white py-2 px-4 rounded hover:bg-gray-800 focus:outline-none focus:shadow-outline"
+        className="bg-blue-900 text-white font-bold py-2 px-4 rounded hover:bg-gray-800 focus:outline-none focus:shadow-outline"
         type="submit"
       >Submit Playway
       </button>

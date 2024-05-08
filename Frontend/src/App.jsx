@@ -30,6 +30,7 @@ import User from './Components/User/Index'
 import Profile from './Components/User/profile'
 import School from './Components/Main/School'
 import Playway from './Components/Main/Playway'
+import About from './Components/Main/About'
 
 
 const App = () => {
@@ -74,7 +75,8 @@ const App = () => {
               <Route path='College' element={<College />} />
               <Route path='Contact' element={<Contact />} />   
               <Route path='School' element={<School />} /> 
-              <Route path='Playway' element={<Playway />} />      
+              <Route path='Playway' element={<Playway />} />  
+              <Route path='About' element={<About />} />      
               </Route>
 
 

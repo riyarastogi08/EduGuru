@@ -59,7 +59,7 @@ const AddCollege = () => {
     <>
     
     <div className="max-w-md mx-auto mt-10 bg-white shadow-lg rounded-lg overflow-hidden">
-  <div className="text-2xl py-4 px-6 bg-gray-900 text-white text-center font-bold uppercase">
+  <div className="text-2xl py-4 px-6 bg-white text-blue-900 text-center font-bold uppercase">
     Add Colleges
   </div>
   <form className="py-4 px-6" onSubmit={addCollegeForm.handleSubmit} method="POST">

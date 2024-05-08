@@ -1,5 +1,4 @@
-
-        .swiper-wrapper {
+.swiper-wrapper {
             height: max-content !important;
 
             width: max-content;
@@ -108,4 +107,3 @@
             width: 24px !important;
             height: 24px !important;
         }
-  

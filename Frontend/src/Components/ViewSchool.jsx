@@ -3,9 +3,9 @@ import {useParams, Link} from 'react-router-dom'
 
 const ViewSchool = () => {
     const {id} = useParams();
-    const [product, setProduct] = useState({});
+    const [school, setSchool] = useState({});
 
-    const fetchProduct = async () => {
+    const fetchSchool = async () => {
         const res = await fetch("http://localhost:5000/School/getbyid/" + id);
         console.log(res.status);
         if (res.status === 200) {
@@ -21,9 +21,9 @@ const ViewSchool = () => {
   return (
     <div>
       <h1>School Details</h1>
-      <h2>{school.pname}</h2>
-      <h3>{school.pprice}</h3>
-      <h3>{school.pdescription}</h3>
+      <h2>{school.name}</h2>
+      <h3>{school.email}</h3>
+      <h3>{school.phone}</h3>
       <Link to="/">Back to Home</Link>
     </div>
   )

@@ -20,6 +20,8 @@ import ManageCollege from './Components/ManageCollege'
 import ManageUser from './Components/ManageUser'
 import Contact from './Components/Contact'
 import ForgetPassword from './Components/ForgetPassword'
+import ViewSchool from './Components/ViewSchool'
+import ViewCollege from './Components/ViewCollege'
 
 const App = () => {
   return (
@@ -41,6 +43,8 @@ const App = () => {
         <Route path='/SchoolListing' element= {<SchoolListing/>}/>
         <Route path='/CollegeListing' element= {<CollegeListing/>}/>
         <Route path='/ViewPlayway' element= {<ViewPlayway/>}/>
+        <Route path='/ViewSchool' element= {<ViewSchool/>}/>
+        <Route path='/ViewCollege' element= {<ViewCollege/>}/>
         <Route path='/ManagePlayway' element= {<ManagePlayway/>}/>
         <Route path='/ManageSchool' element= {<ManageSchool/>}/>
         <Route path='/ManageCollege' element= {<ManageCollege/>}/>

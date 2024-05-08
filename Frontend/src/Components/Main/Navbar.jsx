@@ -24,7 +24,7 @@ const Navbar = () => {
     </div>
     <ul className="hidden absolute top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2 lg:flex lg:mx-auto lg:flex lg:items-center lg:w-auto lg:space-x-6">
       <li>
-        <a className="text-sm text-blue-900 font-bold text-xl hover:text-gray-500" href="#">
+        <a className="text-sm text-blue-900 font-bold text-xl hover:text-blue-700" href="/">
           Home
         </a>
       </li>
@@ -49,7 +49,7 @@ const Navbar = () => {
           About Us
         </a>
       </li>
-      <li className="text-gray-300">
+      <li className="text-blue-900">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
@@ -65,12 +65,12 @@ const Navbar = () => {
           />
         </svg>
       </li>
-      <li>
-        <a className="text-sm text-gray-400 hover:text-gray-500" href="#">
-          Services
+      <li classname="text-blue-900">
+        <a className="text-sm text-blue-900 text-xl font-bold hover:text-blue-700" href="/Main/Playway">
+          Playway
         </a>
       </li>
-      <li className="text-gray-300">
+      <li className="text-blue-900">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
@@ -87,11 +87,11 @@ const Navbar = () => {
         </svg>
       </li>
       <li>
-        <a className="text-sm text-gray-400 hover:text-gray-500" href="#">
-          Pricing
+        <a className="text-sm text-blue-900 text-xl font-bold hover:text-blue-700" href="/Main/School">
+          School
         </a>
       </li>
-      <li className="text-gray-300">
+      <li className="text-blue-900">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
@@ -108,8 +108,8 @@ const Navbar = () => {
         </svg>
       </li>
       <li>
-        <a className="text-sm text-gray-400 hover:text-gray-500" href="#">
-          Contact
+        <a className="text-sm text-blue-900 text-xl font-bold hover:text-blue-700" href="/Main/College">
+          College
         </a>
       </li>
     </ul>

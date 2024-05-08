@@ -3,8 +3,8 @@ import { FaSearch } from "react-icons/fa";
 import { Link } from 'react-router-dom'
 import StarRatings from "react-star-ratings";
 
-const College = () => {
-  const [College, setCollege] = useState([])
+const Playway = () => {
+  const [Playway, setPlayway] = useState([])
 
   const [filterList, setfilterList] = useState([])
   const [products, setProducts] = useState([]);
@@ -21,27 +21,27 @@ const College = () => {
     }
   }
 
-  const calculateAvgRating = (reviews, collegeId) => {
-    const collegeReviews = reviews.filter(review => review.college === collegeId);
-    if (collegeReviews.length === 0) {
+  const calculateAvgRating = (reviews, playwayId) => {
+    const playwayReviews = reviews.filter(review => review.playway === playwayId);
+    if (playwayReviews.length === 0) {
       return 0;
     }
-    const totalRating = collegeReviews.reduce((acc, review) => acc + review.rating, 0);
-    return totalRating / collegeReviews.length;
+    const totalRating = playwayReviews.reduce((acc, review) => acc + review.rating, 0);
+    return totalRating / playwayReviews.length;
   }
 
-  const fetchCollegeData = async () => {
-    const res = await fetch("http://localhost:3000/college/getall");
+  const fetchPlaywayData = async () => {
+    const res = await fetch("http://localhost:3000/playway/getall");
     console.log(res.status);
     if (res.status === 200) {
       const data = await res.json();
       console.log(data);
       setfilterList(data);
       const ratingsData = await fetchReviews();
-      let temp = data.map(college => (
+      let temp = data.map(playway => (
         {
-          ...college,
-          avgRating: calculateAvgRating(ratingsData, college._id)
+          ...playway,
+          avgRating: calculateAvgRating(ratingsData, playway._id)
         }
       ));
       // sort colleges according to avg rating
@@ -53,36 +53,36 @@ const College = () => {
   }
 
   useEffect(() => {
-    fetchCollegeData()
+    fetchPlaywayData()
   }, [])
 
   const filterproduct = (e) => {
     const value = e.target.value;
-    setCollege(filterList.filter((col) => {
-      return (col.collegename.toLowerCase().includes(value.toLowerCase()))
+    setPlayway(filterList.filter((col) => {
+      return (col.playwayname.toLowerCase().includes(value.toLowerCase()))
     }))
   }
 
   const filterByCourses = (course) => {
     console.log(course);
-    const filteredColleges = filterList.filter(col => col.courses.toLowerCase().includes(course.toLowerCase()));
-    setCollege(filteredColleges);
+    const filteredPlayways = filterList.filter(col => col.courses.toLowerCase().includes(course.toLowerCase()));
+    setCollege(filteredPlayways);
   }
 
-  const displayCollegeData = () => {
-    if (College.length === 0) {
+  const displayPlaywayData = () => {
+    if (Playway.length === 0) {
       return <h1 className='text-center fw-bold' style={{ color: "seagreen" }}>No Data Found</h1>
     }
 
-    return College.map((col) => (
+    return Playway.map((col) => (
       <>
         <div className="row h-50 mt-5 shadow mb-3">
           <div className="col-md-3  ">
-            <Link to={`/Mainpage/ViewCollege/${col._id}`}> <img src={'http://localhost:3000/' + col.image} alt="" className="card-img-top p-3" style={{ objectFit: "cover", height: 200 }} />
+            <Link to={`/Mainpage/ViewPlayway/${col._id}`}> <img src={'http://localhost:3000/' + col.image} alt="" className="card-img-top p-3" style={{ objectFit: "cover", height: 200 }} />
             </Link>
           </div>
           <div className="col-md-6 py-4">
-            <h2 className=' fw-semibold fs-5 mt-3 mb-3 ' style={{ fontFamily: "serif" }}>{col.collegename}</h2>
+            <h2 className=' fw-semibold fs-5 mt-3 mb-3 ' style={{ fontFamily: "serif" }}>{col.playwayname}</h2>
             <StarRatings
               rating={col.avgRating}
               starRatedColor="#ffbe00"
@@ -220,11 +220,11 @@ const College = () => {
 
 
       <div className="">
-        {displayCollegeData()}
+        {displayPlaywayData()}
       </div>
 
     </>
   )
 }
 
-export default College
+export default Playway

@@ -7,10 +7,12 @@ import './App.css'
 import AddPlayway from './Components/Admin/AddPlayway'
 import AddSchool from './Components/Admin/AddSchool'
 import AddCollege from './Components/Admin/AddCollege'
-import PlaywayListing from './Components/PlaywayListing'
+
+
+
 import { SnackbarProvider } from 'notistack'
 import ViewPlayway from './Components/ViewPlayway'
-import SchoolListing from './Components/SchoolListing'
+
 import ManagePlayway from './Components/Admin/ManagePlayway'
 import ManageSchool from './Components/Admin/ManageSchool'
 import ManageCollege from './Components/Admin/ManageCollege'
@@ -26,6 +28,8 @@ import College from './Components/Main/College'
 import Dashboard from './Components/Admin/Dashboard'
 import User from './Components/User/Index'
 import Profile from './Components/User/profile'
+import School from './Components/Main/School'
+import Playway from './Components/Main/Playway'
 
 
 const App = () => {
@@ -44,8 +48,7 @@ const App = () => {
               <Route path='/Login' element={<Login />} />
               <Route path='/AddPlayway' element={<AddPlayway />} />
               <Route path='/AddSchool' element={<AddSchool />} />
-              <Route path='/PlaywayListing' element={<PlaywayListing />} />
-              <Route path='/SchoolListing' element={<SchoolListing />} />
+              
          
               <Route path='/ViewPlayway' element={<ViewPlayway />} />
               <Route path='/ViewSchool' element={<ViewSchool />} />
@@ -59,6 +62,8 @@ const App = () => {
 
               <Route path='/admin' element={<Admin />}>
               <Route path='AddCollege' element={<AddCollege />} />
+              <Route path='AddSchool' element={<AddSchool />} />
+              <Route path='AddPlayway' element={<AddPlayway />} />
               <Route path='dashboard' element={<Dashboard />} />
               </Route>
 
@@ -69,7 +74,9 @@ const App = () => {
 
               <Route path='/main' element={<Main />}>
               <Route path='College' element={<College />} />
-              <Route path='Contact' element={<Contact />} />        
+              <Route path='Contact' element={<Contact />} />   
+              <Route path='School' element={<School />} /> 
+              <Route path='Playway' element={<Playway />} />      
               </Route>
 
 

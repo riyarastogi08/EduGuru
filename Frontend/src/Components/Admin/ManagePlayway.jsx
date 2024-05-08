@@ -19,11 +19,13 @@ const [Data, setData] = useState([])
     const displayPlayway =() => {
         return Data.map((playway) => {
             <tr>
-                <td>{playway.name}</td>
-                <td>{playway.email}</td>
-                <td>{playway.address}</td>
-                <td>{playway.phNo}</td>
+                <td>{playway.playwayname}</td>
+                <td>{playway.playwaydetail}</td>
+                <td>{playway.playwayaddress}</td>
+                <td>{playway.phone}</td>
                 <td>{playway.fees}</td>
+                <td>{playway.email}</td>
+                <td>{playway.image}</td>
                 <td>
                     <button className='btn btn-danger'>Delete</button>
                 </td>
@@ -43,10 +45,12 @@ const [Data, setData] = useState([])
             <table className='table'>
                 <thead>
                     <tr>
-                        <th>Name</th>
+                        <th>Playway Name</th>
+                        <th>Playway Detail</th>
+                        <th>Playway Address</th>
                         <th>Email</th>
-                        <th>Address</th>
-                        <th>Phone Number</th>
+                        <th>Phone number</th>
+                        <th>Image</th>
                         <th>Fees</th>
 
                     </tr>

@@ -48,14 +48,9 @@ const App = () => {
               <Route path='/Login' element={<Login />} />
               <Route path='/AddPlayway' element={<AddPlayway />} />
               <Route path='/AddSchool' element={<AddSchool />} />
-              
-         
               <Route path='/ViewPlayway' element={<ViewPlayway />} />
               <Route path='/ViewSchool' element={<ViewSchool />} />
               <Route path='/ViewCollege' element={<ViewCollege />} />
-              <Route path='/ManagePlayway' element={<ManagePlayway />} />
-              <Route path='/ManageSchool' element={<ManageSchool />} />
-              <Route path='/ManageCollege' element={<ManageCollege />} />
               <Route path='/ManageUser' element={<ManageUser />} />
               <Route path='/ForgetPassword' element={<ForgetPassword />} />
 
@@ -64,6 +59,9 @@ const App = () => {
               <Route path='AddCollege' element={<AddCollege />} />
               <Route path='AddSchool' element={<AddSchool />} />
               <Route path='AddPlayway' element={<AddPlayway />} />
+              <Route path='ManageSchool' element={<ManageSchool />} />
+              <Route path='ManagePlayway' element={<ManagePlayway />} />
+              <Route path='ManageCollege' element={<ManageCollege />} />
               <Route path='dashboard' element={<Dashboard />} />
               </Route>
 

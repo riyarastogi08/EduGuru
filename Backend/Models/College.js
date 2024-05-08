@@ -1,10 +1,12 @@
 const {Schema, model} = require('../connection')
-const collegeSchema = new Schema({
-    name: String,
+const userSchema = new Schema({
+    collegename: String,
+    fees: String,
+    collegedetail: String,
+    collegeaddress: String,
+    image: String,
     email: String,
     phone: Number,
-    fees: Number
-   
-
+    courses:String,
 });
-module.exports = model('college', collegeSchema)
+module.exports = model('college', userSchema)

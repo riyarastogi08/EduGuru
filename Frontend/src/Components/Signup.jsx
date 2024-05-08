@@ -1,166 +1,210 @@
 import React from 'react'
-import { useFormik } from 'formik'
-import * as Yup from 'yup'
-import { enqueueSnackbar } from 'notistack'
+import { useFormik } from "formik"
+import { enqueueSnackbar } from "notistack"
 import { useNavigate } from 'react-router-dom'
-import image from '../assets/image1.jpg'
-
-const SignupSchema = Yup.object().shape({
-  name: Yup.string()
-  .required(' required')
-  .min(3, 'Name must be atleast 3 characters')
-  .max(15, 'Name must be atmost 15 characters '),
-  email: Yup.string()
-  .required('Email is required')
-  .email ('Email is in valid'),
-  password: Yup.string()
-  .required('Passwaord is required')
-  .min(8, 'Password must be atleast 8 characters')
-  .max(15, 'Password must be atmost 15 characters')
-  
-})
 
 
 const Signup = () => {
+
   const navigate = useNavigate();
-    // step 1: formik initialisation
-    const signupForm = useFormik({
-      initialValues: {
-        name: '',
-        email: '',
-        password:''
-      },
-      // step 5: validation schema
-      onSubmit: async(values, action) => {
-        console.log(values);
-        const res = await fetch('http://localhost:5000/user/add',{
-          method: 'POST',
-          body: JSON.stringify(values),
-          headers: {
-            'Content-Type': 'application/json'
-          }
-        });
-        console.log(res.status)
-        action.resetForm()
-  
-        if(res.status === 200){
-          enqueueSnackbar('Signup Successfully', {variant: 'success'})
-          navigate('/login')
+
+  const signupForm = useFormik({
+    initialValues: {
+      name: "",
+      email: "",
+      avatar:"",
+      password: "",
+      cpassword: ""
+    },
+
+    onSubmit: async (values) => {
+      console.log(values);
+
+      const res = await fetch("http://localhost:3000/user/add", {
+        method: "POST",
+        body: JSON.stringify(values),
+        headers: {
+          "Content-Type": "application/json"
+        },
+
+
+      })
+      console.log(res.status);
+      if (res.status === 200) {
+        enqueueSnackbar("user Added Successfully", { variant: "success" })
+        navigate("/login")
+      } else {
+        enqueueSnackbar("somthing went wrong", { variant: "warning" })
+      }
+    }
+  });
+
+  const uploadFile = (e) => {
+    const file = e.target.files[0];
+    console.log(file);
+    const fd = new FormData();
+    fd.append('myfile', file);
+    fetch('http://localhost:5000/util/uploadfile', {
+      method: 'POST',
+      body: fd
+
+    })
+      .then((response) => {
+        if (response.status === 200) {
+          toast.success('Photo Upload');
+          response.json()
+            .then((data) => {
+              signupForm.values.avatar = data.savedFile;
+            })
         } else {
-          enqueueSnackbar('Signup Failed', {variant: 'error'})
+          toast.error('some error occured')
         }
-       
-      },
-      validationSchema:SignupSchema,
-     }) 
-     return (
-   
-    <div>
-      <section className="vh-100" style={{ backgroundColor: "#eee" }}>
-        <div className="container h-100">
-          <div className="row d-flex justify-content-center align-items-center h-100">
-            <div className="col-lg-12 col-xl-11">
-              <div className="card text-black" style={{ borderRadius: 25 }}>
-                <div className="card-body p-md-5">
-                  <div className="row justify-content-center">
-                    <div className="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
-                      <p className="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">
-                        Sign up
-                      </p>
-                      <form className="mx-1 mx-md-4" onSubmit={signupForm.handleSubmit}>
-                        <div className="d-flex flex-row align-items-center mb-4">
-                          <i className="fas fa-user fa-lg me-3 fa-fw" />
-                          <div
-                            data-mdb-input-init=""
-                            className="form-outline flex-fill mb-0"
-                          >
-                            <span style={{color:'red', fontSize:10}}>{signupForm.touched.name &&signupForm.errors.name} </span>
+      }).catch((err) => {
+        console.log(err);
+        toast.error('some error occured')
+      });
+  }
 
-                            <input
-                              type="text"
-                              id="name"
-                              className="form-control"
-                              values={signupForm.values.name}
-                              onChange={signupForm.handleChange}
-                              required=''
-                            />
-                            <label className="form-label" htmlFor="form3Example1c">
-                              Name
-                            </label>
-                          </div>
-                        </div>
-                        <div className="d-flex flex-row align-items-center mb-4">
-                          <i className="fas fa-envelope fa-lg me-3 fa-fw" />
-                          <div
-                            data-mdb-input-init=""
-                            className="form-outline flex-fill mb-0"
-                          >
-                            <span style={{color:'red', fontSize:10}}>{signupForm.touched.email &&signupForm.errors.email} </span>
+  return (
+    <>
 
-                            <input
-                              type="email"
-                              id="email"
-                              className="form-control"
-                              values={signupForm.values.email}
-                              onChange={signupForm.handleChange}
-                            />
-                            <label className="form-label" htmlFor="form3Example3c">
-                               Email
-                            </label>
-                          </div>
-                        </div>
-                        <div className="d-flex flex-row align-items-center mb-4">
-                          <i className="fas fa-lock fa-lg me-3 fa-fw" />
-                          <div
-                            data-mdb-input-init=""
-                            className="form-outline flex-fill mb-0"
-                          >
-                            <span style={{color:'red', fontSize:10}}>{signupForm.touched.password &&signupForm.errors.password} </span>
+      <>
+        {/* component */}
+        <style
+          dangerouslySetInnerHTML={{
+            __html:
+              "@import url('https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/5.3.45/css/materialdesignicons.min.css')"
+          }}
+        />
+          <form className="mx-1 mx-md-4" onSubmit={signupForm.handleSubmit}>
+        <div className="min-w-screen min-h-screen  flex items-center justify-center px-5 py-5">
+          <div
+            className="bg-gray-100 text-gray-500 rounded-3xl shadow-xl w-full overflow-hidden"
+            style={{ maxWidth: 1000 }}
+          >
+            <div className="md:flex w-full">
+              <div className="hidden md:block w-1/2 py-10 px-10">
+                <img className='h-full' src="https://static.vecteezy.com/system/resources/previews/010/308/207/original/online-education-cartoon-icon-illustration-education-technology-icon-concept-isolated-premium-flat-cartoon-style-vector.jpg" alt="" />
 
-                            <input
-                              type="password"
-                              id="password"
-                              className="form-control"
-                              values={signupForm.values.password}
-                              onChange={signupForm.handleChange}
-                            />
-                            <label className="form-label" htmlFor="form3Example4c">
-                              Password
-                            </label>
-                          </div>
+              </div>
+              <div className="w-full md:w-1/2 py-10 px-5 md:px-10">
+                <div className="text-center mb-10">
+                  <h1 className="font-bold text-3xl text-blue-900">REGISTER</h1>
+                  <p>Enter your information to register</p>
+                </div>
+                <div>
+
+
+                  <div className="flex -mx-3">
+                    <div className="w-full px-3 mb-3">
+                      <label htmlFor="" className="text-xs font-semibold px-1">
+                        Name
+                      </label>
+                      <div className="flex">
+                        <div className="w-10 z-10 pl-1 text-center pointer-events-none flex items-center justify-center">
+                          <i className="mdi mdi-account-outline text-gray-400 text-lg" />
+
                         </div>
-                        
-                        <div className="form-check d-flex justify-content-center mb-5">
-                          <input
-                            className="form-check-input me-2"
-                            type="checkbox"
-                            defaultValue=""
-                            id="form2Example3c"
-                          />
-                          <label className="form-check-label" htmlFor="form2Example3">
-                            I agree all statements in{" "}
-                            <a href="#!">Terms of service</a>
-                          </label>
-                        </div>
-                        <div className="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
-                          <button
-                            type="submit"
-                            data-mdb-button-init=""
-                            data-mdb-ripple-init=""
-                            className="btn btn-primary btn-lg"
-                          >
-                            SignUp
-                          </button>
-                        </div>
-                      </form>
+                        <input
+                          type="text"
+                          className="w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-indigo-500"
+                          placeholder="Riya"
+                          id="name"
+                          value={signupForm.values.name}
+                          onChange={signupForm.handleChange}
+                        />
+                      </div>
                     </div>
-                    <div className="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">
-                      <img
-                        src={image}
-                        className="img-fluid"
-                        alt="Sample image"
-                        style={{  height:"95%", width:"95 %"}}
-                      />
+                  </div>
+                  <div className="flex -mx-3">
+                    <div className="w-full px-3 mb-3">
+                      <label htmlFor="" className="text-xs font-semibold px-1">
+                        Email
+                      </label>
+                      <div className="flex">
+                        <div className="w-10 z-10 pl-1 text-center pointer-events-none flex items-center justify-center">
+                          <i className="mdi mdi-email-outline text-gray-400 text-lg" />
+                        </div>
+                        <input
+                          type="email"
+                          className="w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-indigo-500"
+                          placeholder="riya@example.com"
+                          id="email"
+                          value={signupForm.values.email}
+                          onChange={signupForm.handleChange}
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div className="flex -mx-3">
+                      <div className="w-full px-3 mb-2">
+                        <label htmlFor="" className="text-xs font-semibold px-1">
+                          Image
+                        </label>
+                        <div className="flex">
+                          <div className="w-10 z-10 pl-1 text-center pointer-events-none flex items-center justify-center">
+                     
+                          </div>
+                          <input
+                            type="file"
+                            onChange={uploadFile}
+                            required=''
+                            value={signupForm.values.avatar}
+                            className="w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-indigo-500"
+                            placeholder="johnsmith@example.com"
+                          />
+                        </div>
+                      </div>
+                    </div>
+
+<div className="flex">
+                  <div className="flex -mx-3 w-1/2">
+                    <div className="w-full px-3 mb-3">
+                      <label htmlFor="" className="text-xs font-semibold px-1">
+                        Password
+                      </label>
+                      <div className="flex">
+                        <div className="w-10 z-10 pl-1 text-center pointer-events-none flex items-center justify-center">
+                          <i className="mdi mdi-lock-outline text-gray-400 text-lg" />
+                        </div>
+                        <input
+                          type="password"
+                          className="w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-indigo-500 "
+                          placeholder="*****"
+                          id="password"
+                          value={signupForm.values.password}
+                          onChange={signupForm.handleChange}
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div className="flex -mx-3 w-1/2">
+                    <div className="w-full px-3 mb-3">
+                      <label htmlFor="" className="text-xs font-semibold px-1">
+                        Confirm Password
+                      </label>
+                      <div className="flex">
+                        <div className="w-10 z-10 pl-1 text-center pointer-events-none flex items-center justify-center">
+                        <i className="mdi mdi-lock-outline text-gray-400 text-lg" />
+                        </div>
+                        <input
+                          type="password"
+                          className="w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-indigo-500"
+                          placeholder="*****"
+                          id="cpassword"
+                          value={signupForm.values.cpassword}
+                          onChange={signupForm.handleChange}
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  </div>
+                  
+                  <div className="flex -mx-3">
+                    <div className="w-full px-3 mb-5">
+                      <button className="block w-full max-w-xs mx-auto bg-blue-900 hover:bg-blue-700 focus:bg-indigo-700 text-white rounded-lg px-3 py-3 font-semibold">
+                        REGISTER NOW
+                      </button>
                     </div>
                   </div>
                 </div>
@@ -168,9 +212,30 @@ const Signup = () => {
             </div>
           </div>
         </div>
-      </section>
+        </form>
+        {/* BUY ME A BEER AND HELP SUPPORT OPEN-SOURCE RESOURCES */}
+        <div className="flex items-end justify-end fixed bottom-0 right-0 mb-4 mr-4 z-10">
+          <div>
+            <a
+              title="Buy me a beer"
+              href="https://www.buymeacoffee.com/scottwindon"
+              target="_blank"
+              className="block w-16 h-16 rounded-full transition-all shadow hover:shadow-lg transform hover:scale-110 hover:rotate-12"
+            >
+              <img
+                className="object-cover object-center w-full h-full rounded-full"
+                src="https://i.pinimg.com/originals/60/fd/e8/60fde811b6be57094e0abc69d9c2622a.jpg"
+              />
+            </a>
+          </div>
+        </div>
+      </>
 
-    </div>
+
+
+
+
+    </>
   )
 }
 

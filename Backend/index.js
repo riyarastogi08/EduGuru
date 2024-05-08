@@ -1,12 +1,13 @@
 const express = require('express');
 const app  = express();
-const port = 5000;
+const port = 3000;
 const cors = require('cors');
 
 const userRouter = require('./Routers/User');
 const schoolRouter = require('./Routers/School');
 const playwayRouter = require('./Routers/Playway');
-const collegeRouter = require('./Routers/College')
+const collegeRouter = require('./Routers/College');
+const utilRouter = require('./Routers/Utils');
 
 app.use(cors({
     origin: ['http://localhost:5173']
@@ -18,6 +19,7 @@ app.use('/user', userRouter);
 app.use('/school',schoolRouter);
 app.use('/playway',playwayRouter);
 app.use('/college',collegeRouter);
+app.use('/util',utilRouter);
 
 
 app.listen(port, () => {

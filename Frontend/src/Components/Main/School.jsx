@@ -47,7 +47,7 @@ const School = () => {
       // sort colleges according to avg rating
       temp.sort((a, b) => b.avgRating - a.avgRating);
       console.log(temp);
-      setSchool(temp);
+      setCollege(temp);
 
     }
   }
@@ -63,10 +63,10 @@ const School = () => {
     }))
   }
 
-  const filterByCourses = (course) => {
-    console.log(course);
-    const filteredSchools = filterList.filter(col => col.courses.toLowerCase().includes(course.toLowerCase()));
-    setSchool(filteredSchools);
+  const filterByCourses = (classes) => {
+    console.log(classes);
+    const filteredSchools = filterList.filter(col => col.classes.toLowerCase().includes(classes.toLowerCase()));
+    setCollege(filteredSchools);
   }
 
   const displaySchoolData = () => {
@@ -76,13 +76,13 @@ const School = () => {
 
     return School.map((col) => (
       <>
-        <div className="row h-50 mt-5 shadow mb-3">
-          <div className="col-md-3  ">
-            <Link to={`/Mainpage/ViewCollege/${col._id}`}> <img src={'http://localhost:3000/' + col.image} alt="" className="card-img-top p-3" style={{ objectFit: "cover", height: 200 }} />
+        <div className="grid grid-cols-3 h-50 mt-5 shadow  mb-4">
+          <div className=" ">
+            <Link to={`/Main/ViewSchool/${col._id}`}> <img src={'http://localhost:3000/' + col.image} alt="" className="card-img-top p-3" style={{ objectFit: "cover", height: 200 }} />
             </Link>
           </div>
           <div className="col-md-6 py-4">
-            <h2 className=' fw-semibold fs-5 mt-3 mb-3 ' style={{ fontFamily: "serif" }}>{col.collegename}</h2>
+            <h2 className=' fw-semibold fs-5 mt-3 mb-3 ' style={{ fontFamily: "serif" }}>{col.schoolname}</h2>
             <StarRatings
               rating={col.avgRating}
               starRatedColor="#ffbe00"
@@ -90,7 +90,7 @@ const School = () => {
               starDimension="20px"
               starSpacing="2px"
             />
-            <p className='text-muted me-3' style={{ fontFamily: "serif" }}>{col.courses}</p>
+            <p className='text-muted me-3' style={{ fontFamily: "serif" }}>{col.classes}</p>
             <p className='text-muted me-3' style={{ fontFamily: "cursive" }}>{col.phone}</p>
             <p className='text-muted ' style={{ fontFamily: "cursive" }}>{col.email}</p>
           </div>
@@ -110,113 +110,36 @@ const School = () => {
     <>
 
 
-<form className="max-w-lg flex my-10 mx-auto">
-  <div className="flex">
-    
-    
-    <button
-      id="dropdown-button"
-      data-dropdown-toggle="dropdown"
-      className="flex-shrink-0 z-10 inline-flex items-center py-2.5 px-4 text-sm font-medium text-center text-gray-900 bg-gray-100 border border-gray-300 rounded-s-lg hover:bg-gray-200 focus:ring-4 focus:outline-none focus:ring-gray-100 dark:bg-gray-700 dark:hover:bg-gray-600 dark:focus:ring-gray-700 dark:text-white dark:border-gray-600"
-      type="button"
-    >
-      Classes{" "}
-      <svg
-        className="w-2.5 h-2.5 ms-2.5"
-        aria-hidden="true"
-        xmlns="http://www.w3.org/2000/svg"
-        fill="none"
-        viewBox="0 0 10 6"
-      >
-        <path
-          stroke="currentColor"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth={2}
-          d="m1 1 4 4 4-4"
-        />
-      </svg>
-    </button>
-    <div
-      id="dropdown"
-      className="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700"
-    >
-      <ul
-        className="py-2 text-sm text-gray-700 dark:text-gray-200"
-        aria-labelledby="dropdown-button"
-      >
-        <li>
-          <button
-          id="Btech" value='a' onClick={(e) => filterByCourses("Btech")}
-            type="button"
-            className="inline-flex w-full px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-          >
-            Btech
-          </button>
-        </li>
-        <li>
-          <button
-            type="button"
-            className="inline-flex w-full px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-          >
-            Mtech
-          </button>
-        </li>
-        <li>
-          <button
-            type="button"
-            className="inline-flex w-full px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-          >
-            Design
-          </button>
-        </li>
-        <li>
-          <button
-            type="button"
-            className="inline-flex w-full px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-          >
-            Logos
-          </button>
-        </li>
-      </ul>
-    </div>
-    <div className="relative w-full">
-      <input
-        type="search"
-        id="search-dropdown"
-        className="block p-2.5 w-full z-20 text-sm text-gray-900 bg-gray-50 rounded-e-lg border-s-gray-50 border-s-2 border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-s-gray-700  dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:border-blue-500"
-        placeholder="Search Colleges..."
-      
-        onChange={filterproduct}
-      />
-      <button
-        type="submit"
-        className="absolute top-0 end-0 p-2.5 text-sm font-medium h-full text-white bg-blue-900 rounded-e-lg border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-      >
-        <FaSearch />
-        <span className="sr-only">Search</span>
-      </button>
-    </div>
-  </div>
-  <button className="bg-blue-900 text-white  px-12 mx-2 rounded">Top 5</button>
+      <div className="container mb-4">
+        <div className=" w-full shadow py-2 border-none">
+          <h5 className="font-serif text-2xl text-blue-900 font-bold text-center py-2">An Easier way to find your School</h5>
+          <div className="input-group flex mb-3 block mx-auto">
+            <input type="text" onChange={filterproduct} className="form-control border-blue-900  text-blue-900" placeholder="Start Typing.." aria-describedby="basic-addon2" />
+            <div className="input-group-append">
+              <button className="input-group-text bg-blue-900 text-white text-2xl" id="basic-addon2"><FaSearch /></button>
+            </div>
+            <Link to='/Mainpage/Top5College'> <button className="bg-blue-900 mx-2 px-5  font-serif text-white rounded">Top 5</button>
+            </Link>
+          </div>
+          <div>
+          </div>
+        </div>
+      </div>
 
-</form>
-
-
-
-
-      {/* <div className="text-white d-flex justify-content-between bg-blue-900 container font-serif text-xl">
-        <button id="MA" value='a' onClick={(e) => filterByCourses("MA")} >MA</button>
-        <button id="BA" value='a' onClick={(e) => filterByCourses("BA")}>BA</button>
-        <button id="BCA" value='a' onClick={(e) => filterByCourses("BCA")}>BCA</button>
-        <button id="MCA" value='a' onClick={(e) => filterByCourses("MCA")}>MCA</button>
-        <button id="BBA" value='a' onClick={(e) => filterByCourses("BBA")}>BBA</button>
-        <button id="MBA" value='a' onClick={(e) => filterByCourses("MBA")}>MBA</button>
-        <button id="Btech" value='a' onClick={(e) => filterByCourses("Btech")}>Btech</button>
-        <button id="Mtech" value='a' onClick={(e) => filterByCourses("Mtech")}>Mtech</button>
-        <button id="Bsc" value='a' onClick={(e) => filterByCourses("Bsc")}>Bsc</button>
-        <button id="Msc" value='a' onClick={(e) => filterByCourses("Msc")}>Msc</button>
-      </div> */}
+      <div className="text-white flex justify-between bg-blue-900 container font-serif text-xl">
+        <button id="1" value='a' onClick={(e) => filterByClasses("1")} >1</button>
+        <button id="2" value='a' onClick={(e) => filterByClasses("2")}>2</button>
+        <button id="3" value='a' onClick={(e) => filterByClasses("3")}>3</button>
+        <button id="4" value='a' onClick={(e) => filterByClasses("4")}>4</button>
+        <button id="5" value='a' onClick={(e) => filterByClasses("5")}>5</button>
+        <button id="6" value='a' onClick={(e) => filterByClasses("6")}>6</button>
+        <button id="7" value='a' onClick={(e) => filterByClasses("7")}>7</button>
+        <button id="8" value='a' onClick={(e) => filterByClasses("8")}>8</button>
+        <button id="9" value='a' onClick={(e) => filterByClasses("9")}>9</button>
+        <button id="10" value='a' onClick={(e) => filterByClasses("10")}>10</button>
+        <button id="11" value='a' onClick={(e) => filterByClasses("11")}>12</button>
+        <button id="12" value='a' onClick={(e) => filterByClasses("12")}>12</button>
+      </div>
 
 
       <div className="">

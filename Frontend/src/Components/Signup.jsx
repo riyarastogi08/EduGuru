@@ -51,17 +51,17 @@ const Signup = () => {
     })
       .then((response) => {
         if (response.status === 200) {
-          toast.success('Photo Upload');
+          enqueueSnackbar.success('Photo Upload');
           response.json()
             .then((data) => {
               signupForm.values.avatar = data.savedFile;
             })
         } else {
-          toast.error('some error occured')
+          enqueueSnackbar.error('some error occured')
         }
       }).catch((err) => {
         console.log(err);
-        toast.error('some error occured')
+        enqueueSnackbar.error('some error occured')
       });
   }
 
@@ -230,11 +230,6 @@ const Signup = () => {
           </div>
         </div>
       </>
-
-
-
-
-
     </>
   )
 }

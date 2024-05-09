@@ -5,7 +5,7 @@ const nodemailer = require('nodemailer');
 
 const storage=multer.diskStorage({
     destination:(req,file,cb)=>{
-        cb(null,'./Uploads');
+        cb(null,'./Static/uploads');
 
     },
     filename:(req,file,cb)=>{

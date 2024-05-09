@@ -7,20 +7,13 @@ import './App.css'
 import AddPlayway from './Components/Admin/AddPlayway'
 import AddSchool from './Components/Admin/AddSchool'
 import AddCollege from './Components/Admin/AddCollege'
-
-
-
 import { SnackbarProvider } from 'notistack'
-import ViewPlayway from './Components/ViewPlayway'
-
 import ManagePlayway from './Components/Admin/ManagePlayway'
 import ManageSchool from './Components/Admin/ManageSchool'
 import ManageCollege from './Components/Admin/ManageCollege'
 import ManageUser from './Components/Admin/ManageUser'
 import Contact from './Components/Main/Contact'
 import ForgetPassword from './Components/ForgetPassword'
-import ViewSchool from './Components/ViewSchool'
-import ViewCollege from './Components/ViewCollege'
 import { AppProvider } from './Context/UserContext'
 import Admin from './Components/Admin/Index'
 import Main from './Components/Main/Index'
@@ -31,6 +24,7 @@ import Profile from './Components/User/profile'
 import School from './Components/Main/School'
 import Playway from './Components/Main/Playway'
 import About from './Components/Main/About'
+import ViewCollege from './Components/Main/ViewCollege'
 
 
 const App = () => {
@@ -47,11 +41,6 @@ const App = () => {
               <Route path='/Home' element={<Home />} />
               <Route path='/Signup' element={<Signup />} />
               <Route path='/Login' element={<Login />} />
-              <Route path='/AddPlayway' element={<AddPlayway />} />
-              <Route path='/AddSchool' element={<AddSchool />} />
-              <Route path='/ViewPlayway' element={<ViewPlayway />} />
-              <Route path='/ViewSchool' element={<ViewSchool />} />
-              <Route path='/ViewCollege' element={<ViewCollege />} />
               <Route path='/ManageUser' element={<ManageUser />} />
               <Route path='/ForgetPassword' element={<ForgetPassword />} />
 
@@ -76,7 +65,8 @@ const App = () => {
               <Route path='Contact' element={<Contact />} />   
               <Route path='School' element={<School />} /> 
               <Route path='Playway' element={<Playway />} />  
-              <Route path='About' element={<About />} />      
+              <Route path='About' element={<About />} /> 
+              <Route path='ViewCollege/:id' element={<ViewCollege />} />   
               </Route>
 
 

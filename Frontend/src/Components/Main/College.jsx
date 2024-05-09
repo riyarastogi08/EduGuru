@@ -76,9 +76,9 @@ const College = () => {
 
     return College.map((col) => (
       <>
-        <div className="row h-50 mt-5 shadow mb-3">
-          <div className="col-md-3  ">
-            <Link to={`/Mainpage/ViewCollege/${col._id}`}> <img src={'http://localhost:3000/' + col.image} alt="" className="card-img-top p-3" style={{ objectFit: "cover", height: 200 }} />
+        <div className="grid grid-cols-3 h-50 mt-5 shadow  mb-4">
+          <div className=" ">
+            <Link to={`/Main/ViewCollege/${col._id}`}> <img src={'http://localhost:3000/' + col.image} alt="" className="card-img-top p-3" style={{ objectFit: "cover", height: 200 }} />
             </Link>
           </div>
           <div className="col-md-6 py-4">
@@ -110,102 +110,23 @@ const College = () => {
     <>
 
 
-<form className="max-w-lg flex my-10 mx-auto">
-  <div className="flex">
-    
-    
-    <button
-      id="dropdown-button"
-      data-dropdown-toggle="dropdown"
-      className="flex-shrink-0 z-10 inline-flex items-center py-2.5 px-4 text-sm font-medium text-center text-gray-900 bg-gray-100 border border-gray-300 rounded-s-lg hover:bg-gray-200 focus:ring-4 focus:outline-none focus:ring-gray-100 dark:bg-gray-700 dark:hover:bg-gray-600 dark:focus:ring-gray-700 dark:text-white dark:border-gray-600"
-      type="button"
-    >
-      Courses{" "}
-      <svg
-        className="w-2.5 h-2.5 ms-2.5"
-        aria-hidden="true"
-        xmlns="http://www.w3.org/2000/svg"
-        fill="none"
-        viewBox="0 0 10 6"
-      >
-        <path
-          stroke="currentColor"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth={2}
-          d="m1 1 4 4 4-4"
-        />
-      </svg>
-    </button>
-    <div
-      id="dropdown"
-      className="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700"
-    >
-      <ul
-        className="py-2 text-sm text-gray-700 dark:text-gray-200"
-        aria-labelledby="dropdown-button"
-      >
-        <li>
-          <button
-          id="Btech" value='a' onClick={(e) => filterByCourses("Btech")}
-            type="button"
-            className="inline-flex w-full px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-          >
-            Btech
-          </button>
-        </li>
-        <li>
-          <button
-            type="button"
-            className="inline-flex w-full px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-          >
-            Mtech
-          </button>
-        </li>
-        <li>
-          <button
-            type="button"
-            className="inline-flex w-full px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-          >
-            Design
-          </button>
-        </li>
-        <li>
-          <button
-            type="button"
-            className="inline-flex w-full px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-          >
-            Logos
-          </button>
-        </li>
-      </ul>
-    </div>
-    <div className="relative w-full">
-      <input
-        type="search"
-        id="search-dropdown"
-        className="block p-2.5 w-full z-20 text-sm text-gray-900 bg-gray-50 rounded-e-lg border-s-gray-50 border-s-2 border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-s-gray-700  dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:border-blue-500"
-        placeholder="Search Colleges..."
-      
-        onChange={filterproduct}
-      />
-      <button
-        type="submit"
-        className="absolute top-0 end-0 p-2.5 text-sm font-medium h-full text-white bg-blue-900 rounded-e-lg border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-      >
-        <FaSearch />
-        <span className="sr-only">Search</span>
-      </button>
-    </div>
-  </div>
-  <button className="bg-blue-900 text-white  px-12 mx-2 rounded">Top 5</button>
+      <div className="container mb-4">
+        <div className=" w-full shadow py-2 border-none">
+          <h5 className="font-serif text-2xl text-blue-900 font-bold text-center py-2">An Easier way to find your College</h5>
+          <div className="input-group flex mb-3 block mx-auto">
+            <input type="text" onChange={filterproduct} className="form-control border-blue-900  text-blue-900" placeholder="Start Typing.." aria-describedby="basic-addon2" />
+            <div className="input-group-append">
+              <button className="input-group-text bg-blue-900 text-white text-2xl" id="basic-addon2"><FaSearch /></button>
+            </div>
+            <Link to='/Mainpage/Top5College'> <button className="bg-blue-900 mx-2 px-5  font-serif text-white rounded">Top 5</button>
+            </Link>
+          </div>
+          <div>
+          </div>
+        </div>
+      </div>
 
-</form>
-
-
-
-
-      {/* <div className="text-white d-flex justify-content-between bg-blue-900 container font-serif text-xl">
+      <div className="text-white flex justify-between bg-blue-900 container font-serif text-xl">
         <button id="MA" value='a' onClick={(e) => filterByCourses("MA")} >MA</button>
         <button id="BA" value='a' onClick={(e) => filterByCourses("BA")}>BA</button>
         <button id="BCA" value='a' onClick={(e) => filterByCourses("BCA")}>BCA</button>
@@ -216,7 +137,7 @@ const College = () => {
         <button id="Mtech" value='a' onClick={(e) => filterByCourses("Mtech")}>Mtech</button>
         <button id="Bsc" value='a' onClick={(e) => filterByCourses("Bsc")}>Bsc</button>
         <button id="Msc" value='a' onClick={(e) => filterByCourses("Msc")}>Msc</button>
-      </div> */}
+      </div>
 
 
       <div className="">

@@ -152,7 +152,7 @@ const AddSchool = () => {
       <input
         className="shadow appearance-none border rounded w-full py-2 px-3 text-blue-800 leading-tight focus:outline-none focus:shadow-outline"
         id="image"
-        type="image"
+        type="file"
         placeholder="enter images"
         value={addSchoolForm.values.image}
         onChange={addSchoolForm.handleChange}

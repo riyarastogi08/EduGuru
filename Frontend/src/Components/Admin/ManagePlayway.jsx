@@ -1,67 +1,295 @@
-import React, {useState, useEffect}from 'react'
+import React from 'react'
 
 const ManagePlayway = () => {
-const [Data, setData] = useState([])
-    const fetchPlaywayData = async () => {
-        const res = await fetch ('http:/localhost:5000/playway/getall',)
-        console.log(res.status)
-        if(res.status ===200){
-            const data = await res.json()
-            console.log(data)
-            setData(data)
-        }
-    }
-    useEffect(() => {
-        fetchPlaywayData()
-    }, [])
-
-
-    const displayPlayway =() => {
-        return Data.map((playway) => {
-            <tr>
-                <td>{playway.playwayname}</td>
-                <td>{playway.playwaydetail}</td>
-                <td>{playway.playwayaddress}</td>
-                <td>{playway.phone}</td>
-                <td>{playway.fees}</td>
-                <td>{playway.email}</td>
-                <td>{playway.image}</td>
-                <td>
-                    <button className='btn btn-danger'>Delete</button>
-                </td>
-            </tr>
-        })
-    }
-
-
   return (
-    <div className=''>
-        <header className='bg-danger mt-5 text-black text-center'>
-            <div className='container py-5'>
-                <h1>Manage Playway</h1>
-            </div>
-        </header>
-        <div className='container mt-3'>
-            <table className='table'>
-                <thead>
-                    <tr>
-                        <th>Playway Name</th>
-                        <th>Playway Detail</th>
-                        <th>Playway Address</th>
-                        <th>Email</th>
-                        <th>Phone number</th>
-                        <th>Image</th>
-                        <th>Fees</th>
-
-                    </tr>
-                </thead>
-                <tbody>
-                    {displayPlayway()}
-                </tbody>
-
-            </table>
-        </div>
+    <>
+    <>
+  {/* component */}
+  <div className="text-gray-900 bg-gray-200">
+    <div className="p-4 flex">
+      <h1 className="text-3xl">Manage Playway</h1>
     </div>
+    <div className="px-3 py-4 flex justify-center">
+      <table className="w-full text-md bg-white shadow-md rounded mb-4">
+        <tbody>
+          <tr className="border-b">
+            <th className="text-left p-3 px-5">Playway Name</th>
+            <th className="text-left p-3 px-5">Email</th>
+            <th className="text-left p-3 px-5">Playway Detail</th>
+            <th className="text-left p-3 px-5">Playway Address</th>
+            <th className="text-left p-3 px-5">Image</th>
+            <th className="text-left p-3 px-5">Classes</th>
+            <th className="text-left p-3 px-5">Phone number</th>
+            <th className="text-left p-3 px-5">Fees</th>
+            <th />
+          </tr>
+          <tr className="border-b hover:bg-orange-100 bg-gray-100">
+            <td className="p-3 px-5">
+              <input
+                type="text"
+                defaultValue="playway.playwayname"
+                className="bg-transparent border-b-2 border-gray-300 py-2"
+              />
+            </td>
+            <td className="p-3 px-5">
+              <input
+                type="text"
+                defaultValue="playway.email"
+                className="bg-transparent border-b-2 border-gray-300 py-2"
+              />
+            </td>
+            <td className="p-3 px-5">
+              <input
+                type="text"
+                defaultValue="playway.playwaydetail"
+                className="bg-transparent border-b-2 border-gray-300 py-2"
+              />
+            </td>
+            <td className="p-3 px-5">
+              <input
+                type="text"
+                defaultValue="playway.address"
+                className="bg-transparent border-b-2 border-gray-300 py-2"
+              />
+            </td>
+
+            <td className="p-3 px-5">
+              <input
+                type="image"
+                defaultValue="playway.image"
+                className="bg-transparent border-b-2 border-gray-300 py-2"
+              />
+            </td>
+            <td className="p-3 px-5">
+              <input
+                type="text"
+                defaultValue="playway.cousrse"
+                className="bg-transparent border-b-2 border-gray-300 py-2"
+              />
+            </td>
+            <td className="p-3 px-5">
+              <input
+                type="text"
+                defaultValue="playway.phone"
+                className="bg-transparent border-b-2 border-gray-300 py-2"
+              />
+            </td>
+            <td className="p-3 px-5">
+              <input
+                type="text"
+                defaultValue="playway.fees"
+                className="bg-transparent border-b-2 border-gray-300 py-2"
+              />
+            </td>
+
+            <td className="p-3 px-5 flex justify-end">
+              <button
+                type="button"
+                className="mr-3 text-sm bg-blue-500 hover:bg-blue-700 text-white py-1 px-2 rounded focus:outline-none focus:shadow-outline"
+              >
+                Save
+              </button>
+              <button
+                type="button"
+                className="text-sm bg-red-500 hover:bg-red-700 text-white py-1 px-2 rounded focus:outline-none focus:shadow-outline"
+              >
+                Delete
+              </button>
+            </td>
+          </tr>
+          <tr className="border-b hover:bg-orange-100">
+            <td className="p-3 px-5">
+              <input
+                type="text"
+                defaultValue="playway.playwayname"
+                className="bg-transparent border-b-2 border-gray-300 py-2"
+              />
+            </td>
+            <td className="p-3 px-5">
+              <input
+                type="text"
+                defaultValue="playway.email"
+                className="bg-transparent border-b-2 border-gray-300 py-2"
+              />
+            </td>
+           
+            <td className="p-3 px-5 flex justify-end">
+              <button
+                type="button"
+                className="mr-3 text-sm bg-blue-500 hover:bg-blue-700 text-white py-1 px-2 rounded focus:outline-none focus:shadow-outline"
+              >
+                Save
+              </button>
+              <button
+                type="button"
+                className="text-sm bg-red-500 hover:bg-red-700 text-white py-1 px-2 rounded focus:outline-none focus:shadow-outline"
+              >
+                Delete
+              </button>
+            </td>
+          </tr>
+          <tr className="border-b hover:bg-orange-100">
+            <td className="p-3 px-5">
+              <input
+                type="text"
+                defaultValue="playway.playwayname"
+                className="bg-transparent border-b-2 border-gray-300 py-2"
+              />
+            </td>
+            <td className="p-3 px-5">
+              <input
+                type="text"
+                defaultValue="playway.email"
+                className="bg-transparent border-b-2 border-gray-300 py-2"
+              />
+            </td>
+            
+            <td className="p-3 px-5 flex justify-end">
+              <button
+                type="button"
+                className="mr-3 text-sm bg-blue-500 hover:bg-blue-700 text-white py-1 px-2 rounded focus:outline-none focus:shadow-outline"
+              >
+                Save
+              </button>
+              <button
+                type="button"
+                className="text-sm bg-red-500 hover:bg-red-700 text-white py-1 px-2 rounded focus:outline-none focus:shadow-outline"
+              >
+                Delete
+              </button>
+            </td>
+          </tr>
+          <tr className="border-b hover:bg-orange-100">
+            <td className="p-3 px-5">
+              <input
+                type="text"
+                defaultValue="playway.playwayname"
+                className="bg-transparent border-b-2 border-gray-300 py-2"
+              />
+            </td>
+            <td className="p-3 px-5">
+              <input
+                type="text"
+                defaultValue="playway.email"
+                className="bg-transparent border-b-2 border-gray-300 py-2"
+              />
+            </td>
+           
+            <td className="p-3 px-5 flex justify-end">
+              <button
+                type="button"
+                className="mr-3 text-sm bg-blue-500 hover:bg-blue-700 text-white py-1 px-2 rounded focus:outline-none focus:shadow-outline"
+              >
+                Save
+              </button>
+              <button
+                type="button"
+                className="text-sm bg-red-500 hover:bg-red-700 text-white py-1 px-2 rounded focus:outline-none focus:shadow-outline"
+              >
+                Delete
+              </button>
+            </td>
+          </tr>
+          <tr className="border-b hover:bg-orange-100">
+            <td className="p-3 px-5">
+              <input
+                type="text"
+                defaultValue="playway.playwayname"
+                className="bg-transparent border-b-2 border-gray-300 py-2"
+              />
+            </td>
+            <td className="p-3 px-5">
+              <input
+                type="text"
+                defaultValue="playway.email"
+                className="bg-transparent border-b-2 border-gray-300 py-2"
+              />
+            </td>
+            
+            <td className="p-3 px-5 flex justify-end">
+              <button
+                type="button"
+                className="mr-3 text-sm bg-blue-500 hover:bg-blue-700 text-white py-1 px-2 rounded focus:outline-none focus:shadow-outline"
+              >
+                Save
+              </button>
+              <button
+                type="button"
+                className="text-sm bg-red-500 hover:bg-red-700 text-white py-1 px-2 rounded focus:outline-none focus:shadow-outline"
+              >
+                Delete
+              </button>
+            </td>
+          </tr>
+          <tr className="border-b hover:bg-orange-100">
+            <td className="p-3 px-5">
+              <input
+                type="text"
+                defaultValue="playway.playwayname"
+                className="bg-transparent border-b-2 border-gray-300 py-2"
+              />
+            </td>
+            <td className="p-3 px-5">
+              <input
+                type="text"
+                defaultValue="playway.email"
+                className="bg-transparent border-b-2 border-gray-300 py-2"
+              />
+            </td>
+            
+            <td className="p-3 px-5 flex justify-end">
+              <button
+                type="button"
+                className="mr-3 text-sm bg-blue-500 hover:bg-blue-700 text-white py-1 px-2 rounded focus:outline-none focus:shadow-outline"
+              >
+                Save
+              </button>
+              <button
+                type="button"
+                className="text-sm bg-red-500 hover:bg-red-700 text-white py-1 px-2 rounded focus:outline-none focus:shadow-outline"
+              >
+                Delete
+              </button>
+            </td>
+          </tr>
+          <tr className="border-b hover:bg-orange-100">
+            <td className="p-3 px-5">
+              <input
+                type="text"
+                defaultValue="playway.playwayname"
+                className="bg-transparent border-b-2 border-gray-300 py-2"
+              />
+            </td>
+            <td className="p-3 px-5">
+              <input
+                type="text"
+                defaultValue="playway.email"
+                className="bg-transparent border-b-2 border-gray-300 py-2"
+              />
+            </td>
+
+            <td className="p-3 px-5 flex justify-end">
+              <button
+                type="button"
+                className="mr-3 text-sm bg-blue-500 hover:bg-blue-700 text-white py-1 px-2 rounded focus:outline-none focus:shadow-outline"
+              >
+                Save
+              </button>
+              <button
+                type="button"
+                className="text-sm bg-red-500 hover:bg-red-700 text-white py-1 px-2 rounded focus:outline-none focus:shadow-outline"
+              >
+                Delete
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</>
+
+    </>
   )
 }
 

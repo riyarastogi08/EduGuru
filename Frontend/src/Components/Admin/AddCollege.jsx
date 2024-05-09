@@ -64,7 +64,7 @@ const AddCollege = () => {
   </div>
   <form className="py-4 px-6" onSubmit={addCollegeForm.handleSubmit} method="POST">
     <div className="mb-4">
-      <label className="block text-gray-700 font-bold mb-2" htmlFor="collegename">
+      <label className="block text-blue-900 font-bold mb-2" htmlFor="collegename">
         College Name
       </label>
       <input
@@ -77,7 +77,7 @@ const AddCollege = () => {
       />
     </div>
     <div className="mb-4">
-      <label className="block text-gray-700 font-bold mb-2" htmlFor="collegedetail">
+      <label className="block text-blue-900 font-bold mb-2" htmlFor="collegedetail">
         College Detail
       </label>
       <input
@@ -90,7 +90,7 @@ const AddCollege = () => {
       />
     </div>
     <div className="mb-4">
-      <label className="block text-gray-700 font-bold mb-2" htmlFor="collegeaddress">
+      <label className="block text-blue-900 font-bold mb-2" htmlFor="collegeaddress">
         College Address
       </label>
       <input
@@ -103,7 +103,7 @@ const AddCollege = () => {
       />
     </div>
     <div className="mb-4">
-      <label className="block text-gray-700 font-bold mb-2" htmlFor="phone">
+      <label className="block text-blue-900 font-bold mb-2" htmlFor="phone">
         Phone Number
       </label>
       <input
@@ -116,7 +116,7 @@ const AddCollege = () => {
       />
   </div>
     <div className="mb-4">
-      <label className="block text-gray-700 font-bold mb-2" htmlFor="email">
+      <label className="block text-blue-900 font-bold mb-2" htmlFor="email">
         Email
       </label>
       <input
@@ -129,7 +129,7 @@ const AddCollege = () => {
       />
   </div>
   <div className="mb-4">
-      <label className="block text-gray-700 font-bold mb-2" htmlFor="courses">
+      <label className="block text-blue-900 font-bold mb-2" htmlFor="courses">
         Courses
       </label>
       <input
@@ -144,7 +144,7 @@ const AddCollege = () => {
 
 
     <div className="mb-4">
-      <label className="block text-gray-700 font-bold mb-2" htmlFor="message">
+      <label className="block text-blue-900 font-bold mb-2" htmlFor="message">
         Fees
       </label>
     <textarea
@@ -158,21 +158,20 @@ const AddCollege = () => {
       />
     </div>
     <div className="mb-4">
-      <label className="block text-gray-700 font-bold mb-2" htmlFor="image">
+      <label className="block text-blue-900 font-bold mb-2" htmlFor="image">
         Image
       </label>
       <input
+      type="file"
         className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
         id="image"
-        type="image"
         placeholder="enter images"
-        value={addCollegeForm.values.image}
-        onChange={addCollegeForm.handleChange}
+        onChange={uploadFile}
       />
   </div>
     <div className="flex items-center justify-center mb-4">
       <button
-        className="bg-gray-900 text-white py-2 px-4 rounded hover:bg-gray-800 focus:outline-none focus:shadow-outline"
+        className="bg-blue-900 text-white py-2 px-4 rounded hover:bg-gray-800 focus:outline-none focus:shadow-outline"
         type="submit"
       >Submit College
       </button>

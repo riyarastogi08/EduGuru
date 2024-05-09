@@ -5,8 +5,14 @@ import Sidebar from './Sidebar'
 const Admin = () => {
   return (
     <>
-    <Sidebar />
-    <Outlet />
+<div className="">
+<Sidebar />
+  
+</div>
+<div className="ms-56">
+<Outlet />
+
+</div>
     </>
   )
 }

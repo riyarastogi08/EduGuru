@@ -3,7 +3,7 @@ import React, {useState, useEffect}from 'react'
 const ManageUser = () => {
 const [Data, setData] = useState([])
     const fetchUserData = async () => {
-        const res = await fetch ('http:/localhost:5000/user/getall',)
+        const res = await fetch ('http:/localhost:3000/user/getall',)
         console.log(res.status)
         if(res.status ===200){
             const data = await res.json()

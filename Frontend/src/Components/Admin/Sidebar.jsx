@@ -1,5 +1,12 @@
 import React from 'react'
 import Logo from '../../../public/Top 5.png'
+import { LuSchool } from "react-icons/lu";
+import { IoSchoolSharp } from "react-icons/io5";
+import { LiaSchoolSolid } from "react-icons/lia";
+import { RiSchoolLine } from "react-icons/ri";
+import { TbSchoolBell } from "react-icons/tb";
+import { IoSchoolOutline } from "react-icons/io5";
+
 
 const Sidebar = () => {
   return (
@@ -34,7 +41,7 @@ const Sidebar = () => {
             className="flex flex-row items-center h-12 transform hover:translate-x-2 transition-transform ease-in duration-200 text-blue-900 hover:text-blue-700"
           >
             <span className="inline-flex items-center justify-center h-12 w-12 text-lg text-blue-900">
-              <i className="bx bx-music" />
+            <LiaSchoolSolid />
             </span>
             <span className="text-sm font-medium">Playway</span>
           </a>
@@ -45,7 +52,7 @@ const Sidebar = () => {
             className="flex flex-row items-center h-12 transform hover:translate-x-2 transition-transform ease-in duration-200 text-blue-900 hover:text-blue-700"
           >
             <span className="inline-flex items-center justify-center h-12 w-12 text-lg text-blue-900">
-              {/* <FontAwesomeIcon icon="fa-solid fa-school" /> */}
+            <LuSchool />
             </span>
             <span className="text-sm font-medium">School</span>
           </a>
@@ -56,7 +63,7 @@ const Sidebar = () => {
             className="flex flex-row items-center h-12 transform hover:translate-x-2 transition-transform ease-in duration-200 text-blue-900 hover:text-blue-700"
           >
             <span className="inline-flex items-center justify-center h-12 w-12 text-lg text-blue-900">
-              <i className="bx bx-shopping-bag" />
+            <IoSchoolSharp />
             </span>
             <span className="text-sm font-medium">College</span>
           </a>
@@ -67,7 +74,7 @@ const Sidebar = () => {
             className="flex flex-row items-center h-12 transform hover:translate-x-2 transition-transform ease-in duration-200 text-blue-900 hover:text-blue-700"
           >
             <span className="inline-flex items-center justify-center h-12 w-12 text-lg text-blue-900">
-              <i className="bx bx-chat" />
+            <TbSchoolBell />
             </span>
             <span className="text-sm font-medium">Manage Playways</span>
           </a>
@@ -78,7 +85,7 @@ const Sidebar = () => {
             className="flex flex-row items-center h-12 transform hover:translate-x-2 transition-transform ease-in duration-200 text-blue-900 hover:text-blue-700"
           >
             <span className="inline-flex items-center justify-center h-12 w-12 text-lg text-blue-900">
-              <i className="bx bx-user" />
+            <RiSchoolLine />
             </span>
             <span className="text-sm font-medium">Manage Schools</span>
           </a>
@@ -89,7 +96,7 @@ const Sidebar = () => {
             className="flex flex-row items-center h-12 transform hover:translate-x-2 transition-transform ease-in duration-200 text-blue-900 hover:text-blue-700"
           >
             <span className="inline-flex items-center justify-center h-12 w-12 text-lg text-blue-900">
-              <i className="bx bx-bell" />
+            <IoSchoolOutline />
             </span>
             <span className="text-sm font-medium">Manage Colleges</span>
             <span className="ml-auto mr-6 text-sm bg-red-100 rounded-full px-3 py-px text-red-500">

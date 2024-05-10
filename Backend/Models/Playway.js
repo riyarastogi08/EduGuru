@@ -7,6 +7,7 @@ const userSchema = new Schema({
     image: String,
     email: String,
     phone: Number,
+    
    
 });
 module.exports = model('playway', userSchema)

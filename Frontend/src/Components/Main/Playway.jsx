@@ -7,7 +7,6 @@ const Playway = () => {
   const [Playway, setPlayway] = useState([])
 
   const [filterList, setfilterList] = useState([])
-  const [products, setProducts] = useState([]);
   const [reviewList, setReviewList] = useState([]);
 
 
@@ -47,7 +46,7 @@ const Playway = () => {
       // sort colleges according to avg rating
       temp.sort((a, b) => b.avgRating - a.avgRating);
       console.log(temp);
-      setCollege(temp);
+      setPlayway(temp);
 
     }
   }
@@ -66,7 +65,7 @@ const Playway = () => {
   const filterByClasses = (classes) => {
     console.log(classes);
     const filteredPlayways = filterList.filter(col => col.classes.toLowerCase().includes(classes.toLowerCase()));
-    setCollege(filteredPlayways);
+    setPlayway(filteredPlayways);
   }
 
   const displayPlaywayData = () => {

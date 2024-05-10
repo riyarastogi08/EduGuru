@@ -6,7 +6,7 @@ const userSchema = new Schema({
     collegeaddress: String,
     image: String,
     email: String,
-    phone: Number,
+    phone: String,
     courses:String,
 });
 module.exports = model('college', userSchema)

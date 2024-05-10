@@ -63,7 +63,7 @@ const School = () => {
     }))
   }
 
-  const filterByCourses = (classes) => {
+  const filterByClasses = (classes) => {
     console.log(classes);
     const filteredSchools = filterList.filter(col => col.classes.toLowerCase().includes(classes.toLowerCase()));
     setCollege(filteredSchools);
@@ -118,7 +118,7 @@ const School = () => {
             <div className="input-group-append">
               <button className="input-group-text bg-blue-900 text-white text-2xl" id="basic-addon2"><FaSearch /></button>
             </div>
-            <Link to='/Mainpage/Top5College'> <button className="bg-blue-900 mx-2 px-5  font-serif text-white rounded">Top 5</button>
+            <Link to='/Mainpage/Top5School'> <button className="bg-blue-900 mx-2 px-5  font-serif text-white rounded">Top 5</button>
             </Link>
           </div>
           <div>
@@ -126,20 +126,7 @@ const School = () => {
         </div>
       </div>
 
-      <div className="text-white flex justify-between bg-blue-900 container font-serif text-xl">
-        <button id="1" value='a' onClick={(e) => filterByClasses("1")} >1</button>
-        <button id="2" value='a' onClick={(e) => filterByClasses("2")}>2</button>
-        <button id="3" value='a' onClick={(e) => filterByClasses("3")}>3</button>
-        <button id="4" value='a' onClick={(e) => filterByClasses("4")}>4</button>
-        <button id="5" value='a' onClick={(e) => filterByClasses("5")}>5</button>
-        <button id="6" value='a' onClick={(e) => filterByClasses("6")}>6</button>
-        <button id="7" value='a' onClick={(e) => filterByClasses("7")}>7</button>
-        <button id="8" value='a' onClick={(e) => filterByClasses("8")}>8</button>
-        <button id="9" value='a' onClick={(e) => filterByClasses("9")}>9</button>
-        <button id="10" value='a' onClick={(e) => filterByClasses("10")}>10</button>
-        <button id="11" value='a' onClick={(e) => filterByClasses("11")}>12</button>
-        <button id="12" value='a' onClick={(e) => filterByClasses("12")}>12</button>
-      </div>
+     
 
 
       <div className="">

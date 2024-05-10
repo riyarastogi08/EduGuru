@@ -32,7 +32,7 @@ const AddSchool = () => {
           // action.resetForm();
           if (res.status === 200) {
               enqueueSnackbar("Item uploaded successfully")
-              Navigate("/Main/College")
+              Navigate("/Main/School")
           }
           else {
               enqueueSnackbar("Something went wrong")

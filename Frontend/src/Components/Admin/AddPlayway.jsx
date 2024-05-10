@@ -17,7 +17,7 @@ const AddPlayway = () => {
           email: "",
           fees: "",
           image: "",
-          classes: "",
+        
       },
 
       onSubmit: async (values, action) => {
@@ -32,7 +32,7 @@ const AddPlayway = () => {
           // action.resetForm();
           if (res.status === 200) {
               enqueueSnackbar("Item uploaded successfully")
-              Navigate("/Main/College")
+              Navigate("/Main/Playway")
           }
           else {
               enqueueSnackbar("Something went wrong")
@@ -95,7 +95,7 @@ const AddPlayway = () => {
       </label>
       <input
         className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-        id="address"
+        id="playwayaddress"
         type="text"
         placeholder="Enter address"
         value={addPlaywayForm.values.playwayaddress}
@@ -128,6 +128,7 @@ const AddPlayway = () => {
         onChange={addPlaywayForm.handleChange}
       />
   </div>
+
   
 
 
@@ -154,8 +155,7 @@ const AddPlayway = () => {
         id="image"
         type="file"
         placeholder="enter images"
-        value={addPlaywayForm.values.image}
-        onChange={addPlaywayForm.handleChange}
+     onChange={uploadFile}
       />
   </div>
     <div className="flex items-center justify-center mb-4">

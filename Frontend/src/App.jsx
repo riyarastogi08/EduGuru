@@ -25,6 +25,10 @@ import School from './Components/Main/School'
 import Playway from './Components/Main/Playway'
 import About from './Components/Main/About'
 import ViewCollege from './Components/Main/ViewCollege'
+import ViewPlayway from './Components/Main/ViewPlayway'
+import ViewSchool from './Components/Main/ViewSchool'
+
+
 
 
 const App = () => {
@@ -66,7 +70,9 @@ const App = () => {
               <Route path='School' element={<School />} /> 
               <Route path='Playway' element={<Playway />} />  
               <Route path='About' element={<About />} /> 
-              <Route path='ViewCollege/:id' element={<ViewCollege />} />   
+              <Route path='ViewCollege/:id' element={<ViewCollege />} />  
+              <Route path='ViewSchool/:id' element={<ViewSchool />} />   
+              <Route path='ViewPlayway/:id' element={<ViewPlayway />} />    
               </Route>
 
 

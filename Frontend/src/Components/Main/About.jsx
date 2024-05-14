@@ -615,14 +615,24 @@ const About = () => {
                   Make your users happy by giving services.
                 </h2>
                 <p className="mb-5 text-base text-body-color dark:text-dark-6">
-                  It is a long established fact that a reader will be distracted
-                  by the readable content of a page when looking at its layout.
-                  The point of using Lorem Ipsum is that it has a more-or-less.
+                Our platform offers curated lists of the top 5 educational institutions in Lucknow, meticulously ranked based on criteria such as academic excellence, faculty quality, infrastructure, and student feedback.
                 </p>
                 <p className="mb-8 text-base text-body-color dark:text-dark-6">
-                  A domain name is one of the first steps to establishing your
-                  brand. Secure a consistent brand image with a domain name that
-                  matches your business.
+                One of the distinctive features of Top-5-Eduguru is its course-wise search functionality. This empowers students to tailor their exploration, enabling them to discover leading institutions that align with their specific academic interests, whether in science, arts, technology, or other fields
+                </p>
+                <p className="mb-5 text-base text-body-color dark:text-dark-6">
+                Providing comprehensive information is a priority at Top-5-Eduguru. Users can access detailed insights into each institution, including information on available courses, admission requirements, faculty profiles, and campus facilities. We believe that a holistic view of these factors is essential for students to make well-informed decisions about their education.
+                </p>
+                <p className="mb-8 text-base text-body-color dark:text-dark-6">
+                User reviews and ratings contribute to the transparency of our platform. By incorporating feedback from peers who have first-hand experiences, Top-5-Eduguru helps prospective students gain valuable insights into the institutions they are considering. This community-driven approach fosters an environment of shared knowledge and supports individuals in making choices that best align with their aspirations.
+                </p>
+                <p className="mb-5 text-base text-body-color dark:text-dark-6">
+                Ensuring accessibility, Top-5-Eduguru boasts a responsive design, allowing users to seamlessly explore educational options across various devices. Whether on a desktop, tablet, or mobile phone, our platform is tailored to provide a user-friendly experience.
+                </p>
+                <p className="mb-8 text-base text-body-color dark:text-dark-6">
+                In essence, Top-5-Eduguru is more than just a platform; it is a guide for students embarking on their academic journey. We aim to simplify the decision-making process, providing the necessary tools and information for students to confidently choose educational institutions that resonate with their goals. Welcome to a world of educational excellence with Top-5-Eduguru!
+
+
                 </p>
                 <a
                   href="javascript:void(0)"

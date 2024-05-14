@@ -67,7 +67,7 @@ const Navbar = () => {
       </li>
       <li classname="text-blue-900">
         <a className="text-sm text-blue-900 text-xl font-bold hover:text-blue-700" href="/Main/Playway">
-          Playway
+          Play-Group
         </a>
       </li>
       <li className="text-blue-900">

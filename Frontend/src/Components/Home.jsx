@@ -44,7 +44,7 @@ const Home = () => {
       <div className="max-w-7xl px-4 lg:px-6 lg:px-8 py-12 lg:py-24 mx-auto">
         <div className="mb-6 sm:mb-10 mt-28 max-w-2xl text-blue-900 text-center mx-auto">
           <h1 className="font-medium text-black bg-blue-900 text-white py-1  font-serif rounded-lg text-2xl sm:text-4xl dark:text-white">
-            Playways
+            Play-Group
           </h1>
         </div>
         {/* Card Grid */}
@@ -60,7 +60,7 @@ const Home = () => {
             </div>
             <div className="pt-4">
               <h3 className="relative inline-block font-medium text-lg text-black before:absolute before:bottom-0.5 before:start-0 before:-z-[1] before:w-full before:h-1 before:bg-blue-900 before:transition before:origin-left before:scale-x-0 group-hover:before:scale-x-100 dark:text-white">
-                TOP Playways
+                TOP Play-Group
               </h3>
               <p className="mt-1 text-gray-600 dark:text-neutral-400">
                 It is an educational approach that emphasizes learning through play, exploration and hand on experiences.
@@ -80,7 +80,7 @@ const Home = () => {
             </div>
             <div className="pt-4">
               <h3 className="relative inline-block font-medium text-lg text-blue before:absolute before:bottom-0.5 before:start-0 before:-z-[1] before:w-full before:h-1 before:bg-blue-900 before:transition before:origin-left before:scale-x-0 group-hover:before:scale-x-100 dark:text-white">
-                See Most Inquired Playways
+                See Most Inquired Play-Group
               </h3>
               <p className="mt-1 text-gray-600 dark:text-neutral-400">
                 Rewriting sport's playbook for billions of athletes

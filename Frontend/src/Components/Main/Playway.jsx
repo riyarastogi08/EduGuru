@@ -125,15 +125,7 @@ const Playway = () => {
         </div>
       </div>
 
-      <div className="text-white flex justify-between bg-blue-900 container font-serif text-xl">
-        <button id="Pre Nursery" value='a' onClick={(e) => filterByClassses("Pre Nursery")} >Pre Nursery</button>
-        <button id="Nursery" value='a' onClick={(e) => filterByClasses("Nersery")}>Nursery</button>
-        <button id="LKG" value='a' onClick={(e) => filterByClasses("LKG")}>LKG</button>
-        <button id="UKG" value='a' onClick={(e) => filterByClasses("UKG")}>UKG</button>
-        
-      </div>
-
-
+    
       <div className="">
         {displayPlaywayData()}
       </div>

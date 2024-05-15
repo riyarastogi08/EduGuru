@@ -56,6 +56,7 @@ const App = () => {
               <Route path='ManageSchool' element={<ManageSchool />} />
               <Route path='ManagePlayway' element={<ManagePlayway />} />
               <Route path='ManageCollege' element={<ManageCollege />} />
+              <Route path='ManageUser:/id' element={<ManageUser />} />
               <Route path='dashboard' element={<Dashboard />} />
               </Route>
 

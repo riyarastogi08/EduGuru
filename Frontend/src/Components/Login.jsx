@@ -81,7 +81,10 @@ const Login = () => {
 
             </div>
             <div className=" text-sm  text-lue-900 border-gray-500  ">
-              Forget password?
+              
+              <Link to="/ForgetPassword" className="text-sm text-blue-500">
+                  Forget Password?
+                </Link>
             </div>
             <button
               className="bg-[#002D74] text-white py-2 rounded-xl hover:scale-105 duration-300 hover:bg-[#206ab1] font-medium"

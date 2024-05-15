@@ -33,7 +33,6 @@ import TopPlayway from './Components/Main/Top5Playway'
 
 
 
-
 const App = () => {
   return (
     <div>
@@ -79,6 +78,7 @@ const App = () => {
               <Route path='ViewPlayway/:id' element={<ViewPlayway />} />    
               <Route path='Top5College' element={<TopCollege />} />  
               <Route path='Top5Playway' element={<TopPlayway />} />    
+              <Route path='Top5School' element={<TopSchool/>} />    
               </Route>
 
 

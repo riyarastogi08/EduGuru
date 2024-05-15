@@ -17,8 +17,7 @@ const AddPlayway = () => {
           email: "",
           fees: "",
           image: "",
-        
-      },
+        },
 
       onSubmit: async (values, action) => {
           values.image = selFile;

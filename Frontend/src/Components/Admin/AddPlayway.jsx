@@ -155,7 +155,7 @@ const AddPlayway = () => {
         id="image"
         type="file"
         placeholder="enter images"
-     onChange={uploadFile}
+       onChange={uploadFile}
       />
   </div>
     <div className="flex items-center justify-center mb-4">

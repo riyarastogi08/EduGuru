@@ -9,7 +9,7 @@ const AddSchool = () => {
   const [selFile, setSelFile] = useState("");
 
   const addSchoolForm = useFormik({
-      initialValues: {
+          initialValues: {
           schoolname: "",      
           schooldetail: "",
           schooladdress: "",
@@ -59,7 +59,7 @@ const AddSchool = () => {
     <>
     
     <div className="max-w-md mx-auto mt-10 bg-white shadow-lg rounded-lg overflow-hidden">
-  <div className="text-2xl py-4 px-6 bg-white-900 text-blue-900 text-center font-bold uppercase">
+  <div className="text-2xl py-4 px-6 bg-white text-blue-900 text-center font-bold uppercase">
     Add Schools
   </div>
   <form className="py-4 px-6" onSubmit={addSchoolForm.handleSubmit} method="POST">
@@ -68,7 +68,7 @@ const AddSchool = () => {
         School Name
       </label>
       <input
-        className="shadow appearance-none border rounded w-full py-2 px-3 text-blue-800 leading-tight focus:outline-none focus:shadow-outline"
+        className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
         id="schoolname"
         type="text"
         placeholder="Enter school name"
@@ -81,7 +81,7 @@ const AddSchool = () => {
         School Detail
       </label>
       <input
-        className="shadow appearance-none border rounded w-full py-2 px-3 text-blue-800 leading-tight focus:outline-none focus:shadow-outline"
+        className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
         id="schooldetail"
         type="text"
         placeholder="Enter school detail"
@@ -94,7 +94,7 @@ const AddSchool = () => {
         School Address
       </label>
       <input
-        className="shadow appearance-none border rounded w-full py-2 px-3 text-blue-800 leading-tight focus:outline-none focus:shadow-outline"
+        className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
         id="schooladdress"
         type="text"
         placeholder="Enter address"
@@ -107,7 +107,7 @@ const AddSchool = () => {
         Phone Number
       </label>
       <input
-        className="shadow appearance-none border rounded w-full py-2 px-3 text-blue-800 leading-tight focus:outline-none focus:shadow-outline"
+        className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
         id="phone"
         type="tel"
         placeholder="enter phone number"
@@ -120,7 +120,7 @@ const AddSchool = () => {
         Email
       </label>
       <input
-        className="shadow appearance-none border rounded w-full py-2 px-3 text-blue-800 leading-tight focus:outline-none focus:shadow-outline"
+        className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
         id="email"
         type="text"
         placeholder="Enter your email"
@@ -136,11 +136,11 @@ const AddSchool = () => {
         Fees
       </label>
     <textarea
-        className="shadow appearance-none border rounded w-full py-2 px-3 text-blue-800 leading-tight focus:outline-none focus:shadow-outline"
+        className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
         id="fees"
         rows={4}
         placeholder="Enter fees"
-        value={addSchoolForm.values.message}
+        value={addSchoolForm.values.fees}
         onChange={addSchoolForm.handleChange}
         defaultValue={""}
       />
@@ -150,17 +150,16 @@ const AddSchool = () => {
         Image
       </label>
       <input
-        className="shadow appearance-none border rounded w-full py-2 px-3 text-blue-800 leading-tight focus:outline-none focus:shadow-outline"
+      type="file"
+        className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
         id="image"
-        type="file"
         placeholder="enter images"
-        value={addSchoolForm.values.image}
-        onChange={addSchoolForm.handleChange}
+        onChange={uploadFile}
       />
   </div>
     <div className="flex items-center justify-center mb-4">
       <button
-        className="bg-blue-900 font-bold text-white fold-bold py-2 px-4 rounded hover:bg-blue-900 focus:outline-none focus:shadow-outline"
+        className="bg-blue-900 text-white py-2 px-4 rounded hover:bg-gray-800 focus:outline-none focus:shadow-outline"
         type="submit"
       >Submit School
       </button>

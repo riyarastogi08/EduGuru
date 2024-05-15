@@ -118,7 +118,7 @@ const School = () => {
             <div className="input-group-append">
               <button className="input-group-text bg-blue-900 text-white text-2xl" id="basic-addon2"><FaSearch /></button>
             </div>
-            <Link to='/Mainpage/Top5School'> <button className="bg-blue-900 mx-2 px-5  font-serif text-white rounded">Top 5</button>
+            <Link to='/Main/Top5School'> <button className="bg-blue-900 mx-2 px-5  font-serif text-white rounded">Top 5</button>
             </Link>
           </div>
           <div>

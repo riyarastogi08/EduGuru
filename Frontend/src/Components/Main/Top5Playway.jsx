@@ -40,7 +40,7 @@ const TopPlayway = () => {
           avgRating: calculateAvgRating(ratingsData, playway._id)
         }
       ));
-      // sort colleges according to avg rating
+      // sort playways according to avg rating
       temp.sort((a, b) => b.avgRating - a.avgRating);
       console.log(temp);
       setPlayway(temp);

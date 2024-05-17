@@ -42,20 +42,22 @@ const ViewPlayway = () => {
         fetchreviewsDAta()
     }, [])
 
-
-
-
     const ratingForm = () => {
         if (currentUser !== null) {
-            return <div>
+            return <div className='px-5'>
                 <StarRatings
                     rating={rating}
                     starRatedColor="orange"
                     changeRating={setRating}
                     numberOfStars={5}
                 />
-                <textarea className='bg-blue-100 w-full mt-3' ref={reviewRef}></textarea>
-                <button className='bg-blue-900 text-white px-2 font-serif rounded' onClick={submitReview}>Submit Review</button>
+
+                <div className="">
+                    <textarea className='bg-blue-100 w-96 mt-3' ref={reviewRef}></textarea> <br />
+                    <button className='bg-blue-900 text-white px-2 py-1 mt-2 mb-12 font-serif rounded' onClick={submitReview}>Submit Review</button>
+
+                </div>
+
             </div>
         } else {
             return <p>login to give review</p>
@@ -89,17 +91,22 @@ const ViewPlayway = () => {
         if (reviews.length === 0) {
             return <h1 className='text-center fw-bold' style={{ color: "seagreen" }}>No Data Found</h1>
         }
-
         return reviews.map((rev) => (
             <>
-                <div className="row h-50">
-                    <div className="rev-md-6 py-4">
-                        <p className='text-warning ' style={{ fontFamily: "cursive" }}>{rev.rating}Star</p>
+                <div className="mx-12 h-50">
+                    <div className="rev-md-6 grid shadow-lg mt-5 grid-cols-12 py-4">
+                        <div className='col-span-1'>
+                        <img className='w-12 h-12 rounded-full' src="https://static.vecteezy.com/system/resources/previews/008/442/086/non_2x/illustration-of-human-icon-user-symbol-icon-modern-design-on-blank-background-free-vector.jpg" alt="" />
+                        </div>
+                        <div className="col-span-11">
+                        <p className='text-red-600  ' style={{ fontFamily: "cursive" }}>{rev.rating}Star</p>
                         <p className=' fw-semibold fs-5  ' style={{ fontFamily: "serif" }}>{rev.name}</p>
                         <p className=' '>{rev.comment}</p>
+                        </div>
+                    
                     </div>
                 </div>
-                <hr />
+         
             </>
         ))
     }
@@ -109,32 +116,25 @@ const ViewPlayway = () => {
             {
                 PlaywayList !== null ? (
 
-                    <div className="container px-10 mb-5">
-                        <div className="row text-center flex align-items-center  flex-col me-5">
+                    <div className="grid-cols-3 grid px-10 mb-5">
+                        <div className=" text-center col-span-1 flex align-items-center  flex-col me-5">
                             <div className="col-md-5" style={{ border: "none", width: 400 }}>
                                 <img src={'http://localhost:3000/' + PlaywayList.image} onClick={window.scrollTo(0, 0)} alt="" className="img-fluid d-block mx-auto mb-3" style={{ height: 500, width: 1000 }} />
-
                             </div>
                         </div>
-                        <div className='card px-4 border-none col-md-8 shadow'>
+                        <div className=' px-4 col-span-2 my-auto py-12 border-none col-md-8 shadow-xl'>
                             <p className=' fw-semibold text-blue-900 fs-2 mt-5 mb-1' style={{ fontFamily: "serif" }}>{PlaywayList.playwayname}</p>
                             <p className='mb-3 fs-5' style={{ fontFamily: "serif" }}>{PlaywayList.playwayaddress}</p>
-                            {/* <p className=' fs-5 fw-semibold ' style={{fontFamily:"cursive"}}>Fees : {CollegeList.fees}</p> */}
-                            <div className=" ">
-                                <div className="row">
-                                    <div className="col-md-3 mb-3">
-                                        <h5 className="fs-5 ms-2 font-serif mt-3">Contact <br /> Details </h5>
-                                    </div>
-                                    <div className="col-md-9">
-                                        <p className=' fs-5  text-secondary' >Email : {PlaywayList.email}</p>
-                                        <p className=' fs-5  mb-2 text-secondary'>Contact : {PlaywayList.phone}</p>
-                                    </div>
+                            <div className="grid grid-cols-6 ">
+                                <div className=" mb-3 col-span-1">
+                                    <h5 className="fs-5 ms-2 font-serif mt-3">Contact <br /> Details </h5>
+                                </div>
+                                <div className="col-span-5 mt-2">
+                                    <p className=' fs-5  text-secondary' >Email : {PlaywayList.email}</p>
+                                    <p className=' fs-5  mb-2 text-secondary'>Contact : {PlaywayList.phone}</p>
                                 </div>
                             </div>
-
                             <p className=' fs-5 text-secondary mb-5'>{PlaywayList.playwaydetail}</p>
-                            {/* <p className=' mb-2  ' ><span className="fw-bold me-1">Phone no:</span>{CollegeList.phone}</p>
-                            <p className="mb-5"><span className="fw-bold me-1">Email:</span>{CollegeList.email}</p> */}
                         </div>
                     </div>
                 ) : (
@@ -143,14 +143,12 @@ const ViewPlayway = () => {
                     </div>
                 )
             }
-            <div className="container">
+            <div className="container mt-24 text-blue-900">
                 <div className="row card py-3 px-4 border-none  shadow">
                     <div className="col-md-8">
-                        <h2 className="">Reviews And Ratings</h2>
+                        <p className="px-5 text-xl ">Reviews And Ratings</p>
                         <p className="fs-4 mb-2"></p>
                         {ratingForm()}
-                        {/* <Link to={/collegeReview/${CollegeList._id}}><button type="button" className="btn mb-4 btn-outline-primary font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2  dark:text-blue-500 dark:hover:text-white dark:hover:bg-blue-500 dark:focus:ring-blue-800">Add Review</button>
-                        </Link> */}
                     </div>
                 </div>
             </div>

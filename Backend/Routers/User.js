@@ -63,14 +63,14 @@ router.post('/getall', (req, res) => {
         res.json(result);
     }).catch((err) => {
        console.log(err);
-       res.status(200).json (err)
+       res.status(500).json (err)
     });
 })
 
 router.delete("/delete/:id", (req,res) => {
     Model.findByIdAndDelete(req.params.id)
     .then((result) => {
-      res.json(result)
+      res.json(200).json(result)
       
     }).catch((err) => {
       console.error(err)

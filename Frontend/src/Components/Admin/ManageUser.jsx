@@ -34,11 +34,11 @@ const ManageUser = () => {
         <tr>
           <td className="px-6 py-4 whitespace-nowrap">
             <div className="flex items-center">
-              <div className="flex-shrink-0 h-10 w-10">
+              {/*<div className="flex-shrink-0 h-10 w-10">
                 <img
                   src={'http://localhost:3000/' + obj.image}
                 />
-              </div>
+    </div>*/}
               <div className="ml-4">
                 <div className="text-sm font-medium text-gray-900 overflow-auto w-28" >{obj.name}</div>
                 
@@ -87,42 +87,22 @@ const ManageUser = () => {
               >
               Name
               </th>
+              
               <th
                 scope="col"
                 className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
               >
-                Fees
+                Password
               </th>
-              <th
-                scope="col"
-                className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
-              >
-                Phone number
-              </th>
-              <th
-                scope="col"
-                className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
-              >
-                Details
-              </th>
-              <th
-                scope="col"
-                className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
-              >
-                address
-              </th>
+              
+              
               <th
                 scope="col"
                 className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
               >
                 email
               </th>
-              <th
-                scope="col"
-                className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
-              >
-                actions
-              </th>
+             
             </tr>
           </thead>
           <tbody className="bg-white divide-y divide-gray-200">

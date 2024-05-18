@@ -7,6 +7,7 @@ const Playway = () => {
   const [Playway, setPlayway] = useState([])
 
   const [filterList, setfilterList] = useState([])
+  const [products, setProducts] = useState([]);
   const [reviewList, setReviewList] = useState([]);
 
 
@@ -57,16 +58,12 @@ const Playway = () => {
 
   const filterproduct = (e) => {
     const value = e.target.value;
-    setPlayway(filterList.filter((col) => {
-      return (col.playwayname.toLowerCase().includes(value.toLowerCase()))
+    setSchool(filterList.filter((col) => {
+      return (col.schoolname.toLowerCase().includes(value.toLowerCase()))
     }))
   }
 
-  const filterByClasses = (classes) => {
-    console.log(classes);
-    const filteredPlayways = filterList.filter(col => col.classes.toLowerCase().includes(classes.toLowerCase()));
-    setPlayway(filteredPlayways);
-  }
+  
 
   const displayPlaywayData = () => {
     if (Playway.length === 0) {
@@ -77,7 +74,7 @@ const Playway = () => {
       <>
         <div className="grid grid-cols-3 h-50 mt-5 shadow  mb-4">
           <div className=" ">
-            <Link to={`/Main/ViewPlayway/${col._id}`}> <img src={'http://localhost:3000/' + col.image} alt="" className="card-img-top p-3" style={{ objectFit: "cover", height: 200 }} />
+            <Link to={`/Main/ViewPlayway/${col._id}`}> <img src={'http://localhost:3000/' + col.image} alt="" className="card-img-top p-3 mx-auto" style={{ objectFit: "cover", height: 200 }} />
             </Link>
           </div>
           <div className="col-md-6 py-4">
@@ -89,7 +86,7 @@ const Playway = () => {
               starDimension="20px"
               starSpacing="2px"
             />
-            <p className='text-muted me-3' style={{ fontFamily: "serif" }}>{col.classes}</p>
+            <p className='text-muted me-3' style={{ fontFamily: "serif" }}>{col.courses}</p>
             <p className='text-muted me-3' style={{ fontFamily: "cursive" }}>{col.phone}</p>
             <p className='text-muted ' style={{ fontFamily: "cursive" }}>{col.email}</p>
           </div>
@@ -125,7 +122,7 @@ const Playway = () => {
         </div>
       </div>
 
-    
+
       <div className="">
         {displayPlaywayData()}
       </div>

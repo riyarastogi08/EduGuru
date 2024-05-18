@@ -78,7 +78,7 @@ const College = () => {
       <>
         <div className="grid grid-cols-3 h-50 mt-5 shadow  mb-4">
           <div className=" ">
-            <Link to={`/Main/ViewCollege/${col._id}`}> <img src={'http://localhost:3000/' + col.image} alt="" className="card-img-top p-3" style={{ objectFit: "cover", height: 200 }} />
+            <Link to={`/Main/ViewCollege/${col._id}`}> <img src={'http://localhost:3000/' + col.image} alt="" className="card-img-top p-3 mx-auto" style={{ objectFit: "cover", height: 200 }} />
             </Link>
           </div>
           <div className="col-md-6 py-4">

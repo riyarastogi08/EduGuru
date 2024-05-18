@@ -63,11 +63,7 @@ const School = () => {
     }))
   }
 
-  const filterByClasses = (classes) => {
-    console.log(classes);
-    const filteredSchools = filterList.filter(col => col.classes.toLowerCase().includes(classes.toLowerCase()));
-    setSchool(filteredSchools);
-  }
+  
 
   const displaySchoolData = () => {
     if (School.length === 0) {
@@ -78,7 +74,7 @@ const School = () => {
       <>
         <div className="grid grid-cols-3 h-50 mt-5 shadow  mb-4">
           <div className=" ">
-            <Link to={`/Main/ViewSchool/${col._id}`}> <img src={'http://localhost:3000/' + col.image} alt="" className="card-img-top p-3" style={{ objectFit: "cover", height: 200 }} />
+            <Link to={`/Main/ViewSchool/${col._id}`}> <img src={'http://localhost:3000/' + col.image} alt="" className="card-img-top p-3 mx-auto" style={{ objectFit: "cover", height: 200 }} />
             </Link>
           </div>
           <div className="col-md-6 py-4">
@@ -90,7 +86,7 @@ const School = () => {
               starDimension="20px"
               starSpacing="2px"
             />
-            <p className='text-muted me-3' style={{ fontFamily: "serif" }}>{col.classes}</p>
+            <p className='text-muted me-3' style={{ fontFamily: "serif" }}>{col.courses}</p>
             <p className='text-muted me-3' style={{ fontFamily: "cursive" }}>{col.phone}</p>
             <p className='text-muted ' style={{ fontFamily: "cursive" }}>{col.email}</p>
           </div>
@@ -125,8 +121,6 @@ const School = () => {
           </div>
         </div>
       </div>
-
-     
 
 
       <div className="">

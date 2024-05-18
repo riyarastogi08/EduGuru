@@ -44,7 +44,7 @@ const Home = () => {
       <div className="max-w-7xl px-4 lg:px-6 lg:px-8 py-12 lg:py-24 mx-auto">
         <div className="mb-6 sm:mb-10 mt-28 max-w-2xl text-blue-900 text-center mx-auto">
           <h1 className="font-medium text-black bg-blue-900 text-white py-1  font-serif rounded-lg text-2xl sm:text-4xl dark:text-white">
-            Play-Group
+            Playway
           </h1>
         </div>
         {/* Card Grid */}
@@ -197,8 +197,8 @@ const Home = () => {
         <div className="max-w-7xl px-4 lg:px-6 lg:px-8 py-12 lg:py-24 mx-auto">
           <blockquote className="max-w-4xl mx-auto">
             <p className="mb-6 md:text-lg">
-              <span className="font-semibold text-lime-400">About</span>{" "}
-              <span className="text-neutral-500">Top-5-EduGuru</span>
+              <span className="font-semibold text-blue-600">About Top-5-EduGuru</span>{" "}
+              
 
             </p>
             <p className="text-xl sm:text-2xl md:text-3xl md:leading-normal text-white">
@@ -213,7 +213,7 @@ const Home = () => {
       <div className="max-w-7xl px-4 lg:px-6 lg:px-8 py-12 lg:py-24 mx-auto">
         <div className="mb-6 sm:mb-10 max-w-2xl text-center mx-auto">
           <h2 className="font-medium bg-blue-900 text-white py-1  font-serif rounded-lg text-2xl sm:text-4xl dark:text-white">
-            Contacts
+            Contact-Us
           </h2>
         </div>
         <div className="grid grid-cols-1 lg:grid-cols-2 lg:items-center gap-6 md:gap-8 lg:gap-12">

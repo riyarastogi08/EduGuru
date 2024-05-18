@@ -11,7 +11,6 @@ import { SnackbarProvider } from 'notistack'
 import ManagePlayway from './Components/Admin/ManagePlayway'
 import ManageSchool from './Components/Admin/ManageSchool'
 import ManageCollege from './Components/Admin/ManageCollege'
-import ManageUser from './Components/Admin/ManageUser'
 import Contact from './Components/Main/Contact'
 import ForgetPassword from './Components/ForgetPassword'
 import { AppProvider } from './Context/UserContext'
@@ -30,6 +29,7 @@ import ViewSchool from './Components/Main/ViewSchool'
 import TopCollege from './Components/Main/Top5College'
 import TopSchool from './Components/Main/Top5School'
 import TopPlayway from './Components/Main/Top5Playway'
+import ManageUser from './Components/Admin/ManageUser'
 
 
 
@@ -47,7 +47,6 @@ const App = () => {
               <Route path='/Home' element={<Home />} />
               <Route path='/Signup' element={<Signup />} />
               <Route path='/Login' element={<Login />} />
-              <Route path='/ManageUser' element={<ManageUser />} />
               <Route path='/ForgetPassword' element={<ForgetPassword />} />
 
 
@@ -58,7 +57,7 @@ const App = () => {
               <Route path='ManageSchool' element={<ManageSchool />} />
               <Route path='ManagePlayway' element={<ManagePlayway />} />
               <Route path='ManageCollege' element={<ManageCollege />} />
-              <Route path='ManageUser:/id' element={<ManageUser />} />
+              <Route path='ManageUser/:id' element={<ManageUser />} />
               <Route path='dashboard' element={<Dashboard />} />
               </Route>
 

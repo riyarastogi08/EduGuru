@@ -116,13 +116,13 @@ const ViewSchool = () => {
             {
                 SchoolList !== null ? (
 
-                    <div className="grid-cols-3 grid px-10 mb-5">
-                        <div className=" text-center col-span-1 flex align-items-center  flex-col me-5">
-                            <div className="col-md-5" style={{ border: "none", width: 400 }}>
-                                <img src={'http://localhost:3000/' + SchoolList.image} onClick={window.scrollTo(0, 0)} alt="" className="img-fluid d-block mx-auto mb-3" style={{ height: 500, width: 1000 }} />
+                    <div className="grid-cols-5 grid px-10 mb-5">
+                        <div className=" text-center col-span-2 flex align-items-center  flex-col me-5">
+                            <div className="my-auto mx-auto" style={{ border: "none", width: 400 }}>
+                                <img src={'http://localhost:3000/' + SchoolList.image} onClick={window.scrollTo(0, 0)} alt="" className="img-fluid  w-full  mb-3"  />
                             </div>
                         </div>
-                        <div className=' px-4 col-span-2 my-auto py-12 border-none col-md-8 shadow-xl'>
+                        <div className=' px-4 col-span-3 my-auto py-12 border-none col-md-8 shadow-xl'>
                             <p className=' fw-semibold text-blue-900 fs-2 mt-5 mb-1' style={{ fontFamily: "serif" }}>{SchoolList.schoolname}</p>
                             <p className='mb-3 fs-5' style={{ fontFamily: "serif" }}>{SchoolList.schooladdress}</p>
                             <div className="grid grid-cols-6 ">

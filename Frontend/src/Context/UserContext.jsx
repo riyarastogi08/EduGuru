@@ -8,6 +8,9 @@ export const AppProvider = ({ children  }) => {
     const [ currentUser,setCurrentUser ] = useState(
         JSON.parse(sessionStorage.getItem('user'))
       );
+    const [ currentAdmin,setCurrentAdmin ] = useState(
+        JSON.parse(sessionStorage.getItem('admin'))
+      );
 
     const [loggedIn, setLoggedIn] = useState(currentUser !== null);
     const navigate = useNavigate();
@@ -17,9 +20,14 @@ export const AppProvider = ({ children  }) => {
         setLoggedIn(false);
         navigate('/');
     }
+    const adminlogout = () => {
+        sessionStorage.removeItem('admin');
+        setLoggedIn(false);
+        navigate('/');
+    }
 
     return (
-        <AppContext.Provider value={{ loggedIn, setLoggedIn, logout,currentUser,setCurrentUser }} >
+        <AppContext.Provider value={{ loggedIn, setLoggedIn, logout,currentUser,currentAdmin,setCurrentAdmin,setCurrentUser }} >
             {children}
         </AppContext.Provider>
     )

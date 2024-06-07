@@ -83,7 +83,7 @@ const Home = () => {
                 See Most Inquired Play-Group
               </h3>
               <p className="mt-1 text-gray-600 dark:text-neutral-400">
-                Rewriting sport's playbook for billions of athletes
+               
               </p>
 
             </div>
@@ -112,7 +112,7 @@ const Home = () => {
                 TOP Schools
               </h3>
               <p className="mt-1 text-gray-600 dark:text-neutral-400">
-                A revamped and dynamic approach to yoga analytics
+                
               </p>
 
             </div>
@@ -132,7 +132,7 @@ const Home = () => {
                 Search Most Inquired Schools
               </h3>
               <p className="mt-1 text-gray-600 dark:text-neutral-400">
-                Rewriting sport's playbook for billions of athletes
+
               </p>
 
             </div>
@@ -161,7 +161,7 @@ const Home = () => {
                 TOP Colleges
               </h3>
               <p className="mt-1 text-gray-600 dark:text-neutral-400">
-                A revamped and dynamic approach to yoga analytics
+                
               </p>
 
             </div>
@@ -181,7 +181,7 @@ const Home = () => {
                 Most Inquired Colleges
               </h3>
               <p className="mt-1 text-gray-600 dark:text-neutral-400">
-                Rewriting sport's playbook for billions of athletes
+
               </p>
 
             </div>

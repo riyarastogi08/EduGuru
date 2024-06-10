@@ -30,6 +30,8 @@ import TopCollege from './Components/Main/Top5College'
 import TopSchool from './Components/Main/Top5School'
 import TopPlayway from './Components/Main/Top5Playway'
 import ManageUser from './Components/Admin/ManageUser'
+import AdminAuth from './AdminAuth'
+import UserAuth from './UserAuth'
 
 
 
@@ -48,9 +50,10 @@ const App = () => {
               <Route path='/Signup' element={<Signup />} />
               <Route path='/Login' element={<Login />} />
               <Route path='/ForgetPassword' element={<ForgetPassword />} />
+              <Route path='/AdminAuth' element={<AdminAuth />} />
+              <Route path='/UserAuth' element={<UserAuth />} />
 
-
-              <Route path='/admin' element={<Admin />}>
+              <Route path='/admin' element={<AdminAuth> <main/> </AdminAuth> }>
               <Route path='AddCollege' element={<AddCollege />} />
               <Route path='AddSchool' element={<AddSchool />} />
               <Route path='AddPlayway' element={<AddPlayway />} />
@@ -61,7 +64,7 @@ const App = () => {
               <Route path='dashboard' element={<Dashboard />} />
               </Route>
 
-              <Route path='/user' element={<User />}>
+              <Route path='/user' element={<UserAuth> <User /> </UserAuth>}>
               <Route path='profile' element={<Profile />} />
           
               </Route>
@@ -72,7 +75,7 @@ const App = () => {
               <Route path='School' element={<School />} /> 
               <Route path='Playway' element={<Playway />} />  
               <Route path='About' element={<About />} /> 
-              <Route path='ViewCollege/:id' element={<ViewCollege />} />  
+              <Route path='ViewCollege/:id' element={<UserAuth> <ViewCollege /> </UserAuth>} />  
               <Route path='ViewSchool/:id' element={<ViewSchool />} />   
               <Route path='ViewPlayway/:id' element={<ViewPlayway />} />    
               <Route path='Top5College' element={<TopCollege />} />  

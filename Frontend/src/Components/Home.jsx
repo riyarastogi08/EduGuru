@@ -133,7 +133,7 @@ const Home = () => {
                 TOP Play-Group
               </h3>
               <p className="mt-1 text-gray-600 dark:text-neutral-400">
-                It is an educational approach that emphasizes learning through play, exploration and hand on experiences.
+                
               </p>
 
             </div>

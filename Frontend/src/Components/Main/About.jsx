@@ -626,14 +626,7 @@ const About = () => {
                 <p className="mb-8 text-base text-body-color dark:text-dark-6">
                 User reviews and ratings contribute to the transparency of our platform. By incorporating feedback from peers who have first-hand experiences, Top-5-Eduguru helps prospective students gain valuable insights into the institutions they are considering. This community-driven approach fosters an environment of shared knowledge and supports individuals in making choices that best align with their aspirations.
                 </p>
-                <p className="mb-5 text-base text-body-color dark:text-dark-6">
-                Ensuring accessibility, Top-5-Eduguru boasts a responsive design, allowing users to seamlessly explore educational options across various devices. Whether on a desktop, tablet, or mobile phone, our platform is tailored to provide a user-friendly experience.
-                </p>
-                <p className="mb-8 text-base text-body-color dark:text-dark-6">
-                In essence, Top-5-Eduguru is more than just a platform; it is a guide for students embarking on their academic journey. We aim to simplify the decision-making process, providing the necessary tools and information for students to confidently choose educational institutions that resonate with their goals. Welcome to a world of educational excellence with Top-5-Eduguru!
-
-
-                </p>
+                
                 <a
                   href="javascript:void(0)"
                   className="inline-flex items-center justify-center py-3 text-base font-medium text-center text-white border border-transparent rounded-md px-7 bg-primary hover:bg-opacity-90"

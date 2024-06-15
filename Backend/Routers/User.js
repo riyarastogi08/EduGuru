@@ -25,7 +25,7 @@ router.post('/authenticate', (req, res) => {
     });
 })
 
-router.get("/getbyemail/", (req,res) =>{
+router.get("/getbymail/:email", (req,res) =>{
     console.log(req.params.email);
     Model.findOne({ email: req.params.email})
         .then((result) => {

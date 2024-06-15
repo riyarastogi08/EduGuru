@@ -14,7 +14,7 @@ const ForgetPassword = () => {
     const navigate = useNavigate();
 
     const checkMailExists = async () => {
-        const res = await fetch(`http://localhost:3000/user/getbyemail/${emailRef.current.value}`);
+        const res = await fetch(`http://localhost:3000/user/getbymail/${emailRef.current.value}`);
         // console.log(res.status);
         const data = await res.json();
         // console.log(data);
@@ -27,7 +27,7 @@ const ForgetPassword = () => {
             enqueueSnackbar('Email not registered', { variant: 'error' });
             return;
         }
-        const res = await fetch(`http://localhost:3000/utils/sendotp`, {
+        const res = await fetch(`http://localhost:3000/util/sendotp`, {
             method: 'POST',
             body: JSON.stringify({ email: emailRef.current.value }),
             headers: {
@@ -43,7 +43,7 @@ const ForgetPassword = () => {
     }
 
     const verifyOTP = async () => {
-        const res = await fetch(`http://localhost:3000/utils/verifyotp/${emailRef.current.value}/${otpRef.current.value}`);
+        const res = await fetch(`http://localhost:3000/util/verifyotp/${emailRef.current.value}/${otpRef.current.value}`);
         // console.log(res.status);
         if (res.status === 200) {
             setShowForm(true);
